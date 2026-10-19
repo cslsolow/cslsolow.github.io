@@ -191,3 +191,10 @@ select { font-size: 12px; background: var(--chip); border: 1px solid var(--line)
 .publication-date-note { margin: -5px 0 15px; color: var(--muted); font-size: 11px; line-height: 1.7; }
 
 .appearance-panel { max-height: calc(100vh - 110px); max-height: calc(100dvh - 110px); overflow-y: auto; }
+
+/* Publication categories: theme-aware icons with a visible text label. */
+.paper-title { position: relative; padding-left: 29px; min-height: 23px; }
+.paper-type-icon { position: absolute; left: 0; top: 0; width: 23px; height: 23px; display: inline-flex; align-items: center; justify-content: center; color: var(--accent); background: var(--accent-soft); border-radius: 5px; }
+.paper-type-icon svg { width: 17px; height: 17px; flex: none; }
+.paper-kind-label { display: inline-block; margin-left: 10px; margin-bottom: 6px; color: var(--muted); font: 10px/1.5 ui-monospace, SFMono-Regular, Menlo, monospace; white-space: nowrap; }
+.paper-kind-label::before { content: "·"; margin-right: 8px; color: var(--muted); }

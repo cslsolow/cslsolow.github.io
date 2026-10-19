@@ -14,7 +14,11 @@
       "publication_date": "2026-10-15",
       "publication_month": "2026-10",
       "publication_date_basis": "arXiv first submission date",
-      "publication_date_source": "https://arxiv.org/abs/2610.21359"
+      "publication_date_source": "https://arxiv.org/abs/2610.21359",
+      "research_type": "data-generation",
+      "research_type_label": "Data generation",
+      "research_type_source": "https://arxiv.org/abs/2610.21359",
+      "research_type_basis": "Editorial classification of the primary contribution from linked primary paper/project descriptions; not a venue or acceptance status."
     },
     {
       "id": "2606.14061",
@@ -35,7 +39,11 @@
       "publication_date": "2026-10-07",
       "publication_month": "2026-10",
       "publication_date_basis": "Publisher online publication date",
-      "publication_date_source": "https://api.crossref.org/works/10.1145/3832783.3834363"
+      "publication_date_source": "https://api.crossref.org/works/10.1145/3832783.3834363",
+      "research_type": "empirical-study",
+      "research_type_label": "Empirical study",
+      "research_type_source": "https://arxiv.org/abs/2606.14061",
+      "research_type_basis": "Editorial classification of the primary contribution from linked primary paper/project descriptions; not a venue or acceptance status."
     },
     {
       "year": 2026,
@@ -49,7 +57,11 @@
       "publication_date": "2026-10-01",
       "publication_month": "2026-10",
       "publication_date_basis": "Publisher online publication date",
-      "publication_date_source": "https://api.crossref.org/works/10.1145/3832122"
+      "publication_date_source": "https://api.crossref.org/works/10.1145/3832122",
+      "research_type": "scaffold",
+      "research_type_label": "Scaffold",
+      "research_type_source": "https://arxiv.org/abs/2602.08146",
+      "research_type_basis": "Editorial classification of the primary contribution from linked primary paper/project descriptions; not a venue or acceptance status."
     },
     {
       "id": "2609.27891",
@@ -64,7 +76,11 @@
       "publication_date": "2026-08-21",
       "publication_month": "2026-08",
       "publication_date_basis": "arXiv first submission date",
-      "publication_date_source": "https://arxiv.org/abs/2609.27891"
+      "publication_date_source": "https://arxiv.org/abs/2609.27891",
+      "research_type": "benchmark",
+      "research_type_label": "Benchmark",
+      "research_type_source": "https://arxiv.org/abs/2609.27891",
+      "research_type_basis": "Editorial classification of the primary contribution from linked primary paper/project descriptions; not a venue or acceptance status."
     },
     {
       "id": "2608.19854",
@@ -79,7 +95,11 @@
       "publication_date": "2026-08-20",
       "publication_month": "2026-08",
       "publication_date_basis": "arXiv first submission date",
-      "publication_date_source": "https://arxiv.org/abs/2608.19854"
+      "publication_date_source": "https://arxiv.org/abs/2608.19854",
+      "research_type": "scaffold",
+      "research_type_label": "Scaffold",
+      "research_type_source": "https://arxiv.org/abs/2608.19854",
+      "research_type_basis": "Editorial classification of the primary contribution from linked primary paper/project descriptions; not a venue or acceptance status."
     },
     {
       "id": "2608.18933",
@@ -94,7 +114,11 @@
       "publication_date": "2026-08-19",
       "publication_month": "2026-08",
       "publication_date_basis": "arXiv first submission date",
-      "publication_date_source": "https://arxiv.org/abs/2608.18933"
+      "publication_date_source": "https://arxiv.org/abs/2608.18933",
+      "research_type": "self-improvement",
+      "research_type_label": "Self-improvement",
+      "research_type_source": "https://arxiv.org/abs/2608.18933",
+      "research_type_basis": "Editorial classification of the primary contribution from linked primary paper/project descriptions; not a venue or acceptance status."
     },
     {
       "year": 2026,
@@ -109,7 +133,11 @@
       "publication_month": "2026-08",
       "publication_date_basis": "First published online on 14 August 2026; journal issue January 2027",
       "publication_date_source": "Publisher online-publication notice dated 2026-08-14",
-      "issue_year": 2027
+      "issue_year": 2027,
+      "research_type": "scaffold",
+      "research_type_label": "Scaffold",
+      "research_type_source": "https://doi.org/10.1016/j.ipm.2026.105092",
+      "research_type_basis": "Editorial classification of the primary contribution from linked primary paper/project descriptions; not a venue or acceptance status."
     },
     {
       "id": "2607.11111",
@@ -122,7 +150,11 @@
       "publication_date": "2026-07-13",
       "publication_month": "2026-07",
       "publication_date_basis": "arXiv first submission date",
-      "publication_date_source": "https://arxiv.org/abs/2607.11111"
+      "publication_date_source": "https://arxiv.org/abs/2607.11111",
+      "research_type": "scaffold",
+      "research_type_label": "Scaffold",
+      "research_type_source": "https://arxiv.org/abs/2607.11111",
+      "research_type_basis": "Editorial classification of the primary contribution from linked primary paper/project descriptions; not a venue or acceptance status."
     },
     {
       "year": 2026,
@@ -142,7 +174,11 @@
       "publication_date": "2026-07",
       "publication_month": "2026-07",
       "publication_date_basis": "Proceedings month (July 2026)",
-      "publication_date_source": "https://conf.researchr.org/details/internetware-2026/internetware-2026-research-track/45/LLMs-as-Continuous-Learners-Improving-Software-Issue-Reproduction-by-Distilling-Expe"
+      "publication_date_source": "https://conf.researchr.org/details/internetware-2026/internetware-2026-research-track/45/LLMs-as-Continuous-Learners-Improving-Software-Issue-Reproduction-by-Distilling-Expe",
+      "research_type": "self-improvement",
+      "research_type_label": "Self-improvement",
+      "research_type_source": "https://conf.researchr.org/details/internetware-2026/internetware-2026-research-track/45/LLMs-as-Continuous-Learners-Improving-Software-Issue-Reproduction-by-Distilling-Expe",
+      "research_type_basis": "Editorial classification of the primary contribution from linked primary paper/project descriptions; not a venue or acceptance status."
     },
     {
       "year": 2026,
@@ -155,7 +191,11 @@
       "publication_date": "2026-05-29",
       "publication_month": "2026-05",
       "publication_date_basis": "Preprint first posted; accepted by EMNLP 2026",
-      "publication_date_source": "https://www.preprints.org/manuscript/202605.2065"
+      "publication_date_source": "https://www.preprints.org/manuscript/202605.2065",
+      "research_type": "survey",
+      "research_type_label": "Survey",
+      "research_type_source": "https://www.preprints.org/manuscript/202605.2065",
+      "research_type_basis": "Editorial classification of the primary contribution from linked primary paper/project descriptions; not a venue or acceptance status."
     },
     {
       "id": "2507.23361",
@@ -170,7 +210,11 @@
       "publication_date": "2025-07-31",
       "publication_month": "2025-07",
       "publication_date_basis": "arXiv first submission date",
-      "publication_date_source": "https://arxiv.org/abs/2507.23361"
+      "publication_date_source": "https://arxiv.org/abs/2507.23361",
+      "research_type": "scaffold",
+      "research_type_label": "Scaffold",
+      "research_type_source": "https://arxiv.org/abs/2507.23361",
+      "research_type_basis": "Editorial classification of the primary contribution from linked primary paper/project descriptions; not a venue or acceptance status."
     }
   ],
   "news": [
