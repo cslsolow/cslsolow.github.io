@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64" role="img" aria-labelledby="title">
+  <title id="title">SC — Silin Chen</title>
+  <rect width="64" height="64" rx="14" fill="#111310"/>
+  <rect x="2.5" y="2.5" width="59" height="59" rx="11.5" fill="none" stroke="#bd9b50" stroke-width="1.5"/>
+  <g fill="none" stroke="#e5c574" stroke-width="4.4" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M28 22C24 17.5 12 18 11 25.5C10 33 27 30 28 37.5C29 45.5 16 47 10.5 41.5"/>
+    <path d="M54 22.5C47 16.5 35.5 21 35 31.5C34.5 42.5 46.5 47.5 54 41.5"/>
+  </g>
+</svg>
