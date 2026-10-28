@@ -26,7 +26,7 @@ python3 -m http.server 8765 --bind 127.0.0.1
 - `assets/avatar.png`：用户提供的主页头像，源文件为工作区根目录的 `大头照.png`；保留原始图片，网页用圆形样式展示。
 - `content.json`：本轮整理的论文数据快照，作为内容参考；页面运行不读取它。修改快照不会自动更新 HTML。
 
-11 条论文来自用户指定的 Google Scholar。完整作者优先使用 arXiv 元数据，其余使用 Scholar 详情。SeeRepo、AdverTest 的会议状态另经会议官网核对；Context Compression 的 EMNLP 状态另见作者主页。Internetware 记录使用会议官网正式标题并按会议年 2026 分组，Scholar 中的 2024 为预印本首发时间；IP&M 记录按 2026 年 8 月线上发表时间分组，venue 保留 2027 年卷期年份。共同一作：SeeRepo 依据论文正文，LLMs as Continuous Learners 依据用户 Scholar 的明确星号标记；筛选包含第一作者及共同第一作者。论文元数据仍建议在正式发布前由作者确认。
+11 条论文来自用户指定的 Google Scholar。完整作者优先使用 arXiv 元数据，其余使用 Scholar 详情。SeeRepo、AdverTest 的会议状态另经会议官网核对；Context Compression 的 EMNLP 状态另见作者主页。LLMs as Continuous Learners 使用会议官网正式标题，按 2024-11-21 首发日期归入 2024 年，venue 保留 Internetware 2026；IP&M 记录按 2026 年 8 月线上发表时间分组，venue 保留 2027 年卷期年份。共同一作：SeeRepo 依据论文正文，LLMs as Continuous Learners 依据用户 Scholar 的明确星号标记；筛选包含第一作者及共同第一作者。论文元数据仍建议在正式发布前由作者确认。
 
 源记录位于工作区 `docs/research/`，不需要随网站发布。身份、单位、实验室、科研经历和邮箱采用用户于 2026-10-19 提供的简介；CV 尚未提供。三位导师姓名链接至各自主页。Kaggle 地址使用 GitHub 个人资料中链接的 chensilin 账户。Survey 的标题、Paper 按钮与 News 链接均使用用户指定的 Preprints.org 地址。
 
@@ -61,7 +61,7 @@ Planning over Actions 的论文链接采用 DOI `10.1016/j.ipm.2026.105092`。�
 
 ## 年月与排序
 
-Publications 按正式线上发表日期倒序；尚无正式日期的预印本按首发日期，Internetware 按论文集月份。每条论文展示月份，日期提示区分首发、正式上线和卷期。
+Publications 按正式线上发表日期倒序；尚无正式日期的预印本按首发日期，LLMs as Continuous Learners 按 2024-11-21 的首发日期排序（2026-10-28 按用户要求修正），会议标签和接收 News 保留 Internetware 2026。每条论文展示月份，日期提示区分首发、正式上线和卷期。
 
 News：EMNLP 为 Aug 2026（官方主会通知时间），IP&M 为 Aug 2026（出版社正式上线通知），ISSTA 为 Jul 2026（最终录用通知，不用六月 conditional acceptance），ASE 为 Jun 2026（官方通知时间与当月 arXiv 接收声明相符），Internetware 为 May 2026（各轮通知均在五月）。
 

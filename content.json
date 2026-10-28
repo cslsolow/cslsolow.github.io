@@ -158,30 +158,6 @@
     },
     {
       "year": 2026,
-      "venue": "Internetware 2026",
-      "reviewed": true,
-      "title": "LLMs as Continuous Learners: Improving Software Issue Reproduction by Distilling Experiences",
-      "authors": "Yalan Lin, Silin Chen, Yingwei Ma, Rongyu Cao, Binhua Li, Fei Huang, Xiaodong Gu, Yongbin Li",
-      "paper": "https://conf.researchr.org/details/internetware-2026/internetware-2026-research-track/45/LLMs-as-Continuous-Learners-Improving-Software-Issue-Reproduction-by-Distilling-Expe",
-      "source": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=QJBmVEwAAAAJ&pagesize=100&citation_for_view=QJBmVEwAAAAJ:9yKSN-GCB0IC",
-      "cofirst": true,
-      "equal_contributors": [
-        "Yalan Lin",
-        "Silin Chen"
-      ],
-      "authorship_source": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=QJBmVEwAAAAJ&pagesize=100&citation_for_view=QJBmVEwAAAAJ:9yKSN-GCB0IC",
-      "publication_source": "https://conf.researchr.org/details/internetware-2026/internetware-2026-research-track/45/LLMs-as-Continuous-Learners-Improving-Software-Issue-Reproduction-by-Distilling-Expe",
-      "publication_date": "2026-07",
-      "publication_month": "2026-07",
-      "publication_date_basis": "Proceedings month (July 2026)",
-      "publication_date_source": "https://conf.researchr.org/details/internetware-2026/internetware-2026-research-track/45/LLMs-as-Continuous-Learners-Improving-Software-Issue-Reproduction-by-Distilling-Expe",
-      "research_type": "self-improvement",
-      "research_type_label": "Self-improvement",
-      "research_type_source": "https://conf.researchr.org/details/internetware-2026/internetware-2026-research-track/45/LLMs-as-Continuous-Learners-Improving-Software-Issue-Reproduction-by-Distilling-Expe",
-      "research_type_basis": "Editorial classification of the primary contribution from linked primary paper/project descriptions; not a venue or acceptance status."
-    },
-    {
-      "year": 2026,
       "venue": "EMNLP 2026",
       "reviewed": true,
       "title": "Context Compression for LLM Agents: A Survey of Methods, Failure Modes, and Evaluation",
@@ -215,6 +191,31 @@
       "research_type_label": "Scaffold",
       "research_type_source": "https://arxiv.org/abs/2507.23361",
       "research_type_basis": "Editorial classification of the primary contribution from linked primary paper/project descriptions; not a venue or acceptance status."
+    },
+    {
+      "year": 2024,
+      "venue": "Internetware 2026",
+      "reviewed": true,
+      "title": "LLMs as Continuous Learners: Improving Software Issue Reproduction by Distilling Experiences",
+      "authors": "Yalan Lin, Silin Chen, Yingwei Ma, Rongyu Cao, Binhua Li, Fei Huang, Xiaodong Gu, Yongbin Li",
+      "paper": "https://conf.researchr.org/details/internetware-2026/internetware-2026-research-track/45/LLMs-as-Continuous-Learners-Improving-Software-Issue-Reproduction-by-Distilling-Expe",
+      "source": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=QJBmVEwAAAAJ&pagesize=100&citation_for_view=QJBmVEwAAAAJ:9yKSN-GCB0IC",
+      "cofirst": true,
+      "equal_contributors": [
+        "Yalan Lin",
+        "Silin Chen"
+      ],
+      "authorship_source": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=QJBmVEwAAAAJ&pagesize=100&citation_for_view=QJBmVEwAAAAJ:9yKSN-GCB0IC",
+      "publication_source": "https://conf.researchr.org/details/internetware-2026/internetware-2026-research-track/45/LLMs-as-Continuous-Learners-Improving-Software-Issue-Reproduction-by-Distilling-Expe",
+      "publication_date": "2024-11-21",
+      "publication_month": "2024-11",
+      "publication_date_basis": "First release date from Google Scholar; user confirmed 2024 grouping on 2026-10-28. Conference venue remains Internetware 2026.",
+      "publication_date_source": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=QJBmVEwAAAAJ&pagesize=100&citation_for_view=QJBmVEwAAAAJ:9yKSN-GCB0IC",
+      "research_type": "self-improvement",
+      "research_type_label": "Self-improvement",
+      "research_type_source": "https://conf.researchr.org/details/internetware-2026/internetware-2026-research-track/45/LLMs-as-Continuous-Learners-Improving-Software-Issue-Reproduction-by-Distilling-Expe",
+      "research_type_basis": "Editorial classification of the primary contribution from linked primary paper/project descriptions; not a venue or acceptance status.",
+      "conference_year": 2026
     }
   ],
   "news": [
