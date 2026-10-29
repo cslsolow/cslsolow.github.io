@@ -5,25 +5,26 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Silin Chen — AI for Software Engineering</title>
   <meta name="description" content="Silin Chen, incoming Ph.D. student at HKUST (Guangzhou), researching LLM4SE, coding agents, agent self-improvement, benchmarks, and repository-level code generation.">
-  <link rel="icon" href="assets/favicon.svg?v=37c418f2b05c" type="image/svg+xml">
-  <script src="theme-init.js?v=37c418f2b05c"></script>
-  <link rel="stylesheet" href="styles.css?v=37c418f2b05c">
-  <script src="app.js?v=37c418f2b05c" defer></script>
+  <link rel="icon" href="assets/favicon.svg?v=0258ebcfeac7" type="image/svg+xml">
+  <script src="theme-init.js?v=0258ebcfeac7"></script>
+  <link rel="stylesheet" href="styles.css?v=0258ebcfeac7">
+  <script src="app.js?v=0258ebcfeac7" defer></script>
+  <script src="language.js?v=0258ebcfeac7" defer></script>
 </head>
 <body>
 <a class="skip-link" href="#main">Skip to content</a>
 <header class="topbar"><nav class="nav-wrap" aria-label="Main navigation">
   <a class="wordmark" href="#about"><span>~/</span>silin.chen</a>
-  <div class="nav-links"><a class="active" href="#about" aria-current="location">About</a><a href="#news">News</a><a href="#publications">Publications</a></div>
+  <div class="nav-links"><a class="active" href="#about" aria-current="location">About</a><a href="#news">News</a><a href="#publications">Publications</a><button class="language-toggle" id="language-toggle" type="button" lang="zh-CN" aria-label="切换到中文" hidden>中文</button></div>
 </nav></header>
 <div class="site-layout">
   <aside class="profile" aria-label="Profile">
-    <img class="portrait" src="assets/avatar.png?v=37c418f2b05c" alt="Portrait of Silin Chen" width="164" height="164">
+    <img class="portrait" src="assets/avatar.png?v=0258ebcfeac7" alt="Portrait of Silin Chen" width="164" height="164">
     <h1>Silin Chen</h1>
     <p class="profile-role">Incoming Ph.D. student</p>
     <p class="profile-subtitle">HKUST (Guangzhou) · MAYU Lab</p>
     <div class="profile-meta">
-      <p><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12S4 16 4 10a8 8 0 1 1 16 0Z"/><circle cx="12" cy="10" r="2.5"/></svg>Shanghai, China</p>
+      <p><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12S4 16 4 10a8 8 0 1 1 16 0Z"/><circle cx="12" cy="10" r="2.5"/></svg><span class="profile-location">Shanghai, China</span></p>
       <p><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m7 10 3 2-3 2m6 0h4"/></svg><span>cslsolow</span></p>
       <p class="profile-email"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 6 9 7 9-7"/></svg><a href="mailto:cslsolow@gmail.com">cslsolow@gmail.com</a></p>
     </div>
@@ -33,11 +34,12 @@
       <a href="https://www.kaggle.com/chensilin" target="_blank" rel="noopener noreferrer">Kaggle ↗</a>
       <a href="https://www.linkedin.com/in/silin-chen-31634225b/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
     </div>
-    <p class="profile-note"><span class="eyebrow">Research focus</span>Coding agents, self-improvement,<br>and repository-level generation.</p>
+    <p class="profile-note"><span class="eyebrow">Research focus</span><span class="profile-focus">Coding agents, self-improvement,<br>and repository-level generation.</span></p>
   </aside>
   <main id="main">
     <section id="about" class="about" aria-labelledby="about-title">
       <h2 id="about-title">About</h2>
+      <div id="about-copy">
       <p>I am an incoming Ph.D. student at <strong>The Hong Kong University of Science and Technology (Guangzhou)</strong>, where I will join the <strong>MAYU Lab</strong> under the supervision of <a href="https://v587su.github.io/" target="_blank" rel="noopener noreferrer">Prof. Zhensu Sun</a>.</p>
       <p>Previously, I was a Research Assistant at the <strong>LLMSE Lab, Shanghai Jiao Tong University</strong>, from February 2025 to December 2026, supervised by <a href="https://guxd.github.io/" target="_blank" rel="noopener noreferrer">Prof. Xiaodong Gu</a> and <a href="https://base.sjtu.edu.cn/~bjshen/" target="_blank" rel="noopener noreferrer">Prof. Beijun Shen</a>.</p>
       <p>My research focuses on <strong>Large Language Models for Software Engineering (LLM4SE)</strong>, particularly developing more capable, autonomous, and reliable coding agents.</p>
@@ -48,6 +50,7 @@
         <li><strong>Software Engineering Benchmarks</strong> — designing realistic and challenging benchmarks to evaluate the capabilities and limitations of coding agents.</li>
         <li><strong>Repository-Level Code Generation</strong> — enabling autonomous agents to generate, maintain, and evolve software repositories.</li>
       </ul>
+      </div>
     </section>
     <section id="news" aria-labelledby="news-title">
       <h2 id="news-title">News</h2>
@@ -61,7 +64,7 @@
         <li data-date="2025-08-06"><time datetime="2025-08-06" title="August 6, 2025">Aug 2025</time><p><a href="https://github.com/cslsolow/SWE-Exp" target="_blank" rel="noopener noreferrer">SWE-Exp</a> ranked <strong>2nd</strong> on the <a href="https://www.swebench.com/" target="_blank" rel="noopener noreferrer">SWE-bench Verified leaderboard</a> among methods using both <strong>open-source models</strong> and <strong>open-source scaffolds</strong>!</p></li>
       </ul>
     </section>
-    <section id="publications" aria-labelledby="publications-title">
+    <section id="publications" lang="en" aria-labelledby="publications-title">
       <div class="section-heading"><h2 id="publications-title">Publications</h2><a href="https://scholar.google.com/citations?user=QJBmVEwAAAAJ" target="_blank" rel="noopener noreferrer">Google Scholar ↗</a></div>
       <p class="publication-date-note">Newest first · publication or first release dates; venue labels show conference years.</p>
       <div class="filters" role="group" aria-label="Filter publications">
@@ -146,7 +149,7 @@
   </main>
 </div>
 <details class="appearance">
-  <summary><span class="color-dot" aria-hidden="true"></span><span lang="zh-CN">配色 · <span id="current-theme">琥珀</span></span><span aria-hidden="true">⌃</span></summary>
+  <summary><span class="color-dot" aria-hidden="true"></span><span><span id="theme-label">Theme · </span><span id="current-theme">Amber</span></span><span aria-hidden="true">⌃</span></summary>
   <div class="appearance-panel" lang="zh-CN">
     <div class="appearance-heading"><span>试试不同的配色</span><small>同一布局，即时切换</small></div>
     <div class="theme-options" role="group" aria-label="主页配色">
@@ -163,9 +166,22 @@
       <button class="theme-option" aria-label="靛蓝 Indigo 配色" data-set-theme="indigo" aria-pressed="false"><span class="color-dot" style="--swatch:#4b4ea3" aria-hidden="true"></span>靛蓝 Indigo</button>
       <button class="theme-option" aria-label="墨绿夜 Forest 配色" data-set-theme="forest" aria-pressed="false"><span class="color-dot" style="--swatch:#8bd6b5" aria-hidden="true"></span>墨绿夜 Forest</button>
     </div>
-    <a class="compare-link" href="colors.html?v=37c418f2b05c">比较全部 12 套配色 ↗</a>
+    <a class="compare-link" href="colors.html?v=0258ebcfeac7">比较全部 12 套配色 ↗</a>
   </div>
 </details>
 <div id="theme-announcement" class="sr-only" role="status" aria-live="polite"></div>
-<noscript><p class="noscript-note">All publications are shown. Enable JavaScript to use the filters and switch colors, or open a themed preview from <a href="colors.html?v=37c418f2b05c">the color comparison page</a>.</p></noscript>
+<template id="about-zh">
+  <p>我即将入读<strong>香港科技大学（广州）</strong>博士项目，加入 <strong>MAYU Lab</strong>，师从 <a href="https://v587su.github.io/" target="_blank" rel="noopener noreferrer" lang="en">Prof. Zhensu Sun</a>。</p>
+  <p>此前，我于 2025 年 2 月至 2026 年 12 月在<strong>上海交通大学 LLMSE Lab</strong> 担任研究助理，导师为 <a href="https://guxd.github.io/" target="_blank" rel="noopener noreferrer" lang="en">Prof. Xiaodong Gu</a> 和 <a href="https://base.sjtu.edu.cn/~bjshen/" target="_blank" rel="noopener noreferrer" lang="en">Prof. Beijun Shen</a>。</p>
+  <p>我的研究聚焦于<strong>面向软件工程的大语言模型（LLM4SE）</strong>，尤其关注如何构建能力更强、自主性更高、更可靠的编程智能体。</p>
+  <p>我的研究兴趣包括：</p>
+  <ul class="research-list">
+    <li><strong>软件工程智能体</strong> — 提升编程智能体处理复杂、真实软件开发任务的能力。</li>
+    <li><strong>智能体训练与自我改进</strong> — 探索编程智能体的有效训练策略与合成数据生成方法。</li>
+    <li><strong>软件工程评测基准</strong> — 设计贴近真实场景且具有挑战性的基准，评估编程智能体的能力与局限。</li>
+    <li><strong>仓库级代码生成</strong> — 让自主智能体能够生成、维护和演进完整的软件仓库。</li>
+  </ul>
+</template>
+<div id="language-announcement" class="sr-only" role="status" aria-live="polite"></div>
+<noscript><p class="noscript-note">All publications are shown. Enable JavaScript to use the filters and switch colors, or open a themed preview from <a href="colors.html?v=0258ebcfeac7">the color comparison page</a>.</p></noscript>
 </body></html>

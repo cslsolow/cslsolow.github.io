@@ -198,3 +198,13 @@ select { font-size: 12px; background: var(--chip); border: 1px solid var(--line)
 .paper-type-icon svg { width: 17px; height: 17px; flex: none; }
 .paper-kind-label { display: inline-block; margin-left: 10px; margin-bottom: 6px; color: var(--muted); font: 10px/1.5 ui-monospace, SFMono-Regular, Menlo, monospace; white-space: nowrap; }
 .paper-kind-label::before { content: "·"; margin-right: 8px; color: var(--muted); }
+
+/* Language control stays with navigation at every screen size. */
+.language-toggle { border: 1px solid var(--line); background: var(--surface); color: var(--accent); border-radius: 5px; padding: 5px 10px; margin-left: 10px; font-size: 12px; line-height: 1.6; white-space: nowrap; }
+.language-toggle:hover { background: var(--accent-soft); border-color: var(--accent); }
+html[lang="zh-CN"] .about { line-height: 1.95; }
+html[lang="zh-CN"] .about h2, html[lang="zh-CN"] #news h2 { letter-spacing: 0; }
+@media (max-width: 430px) {
+  .nav-wrap { gap: 6px; }
+  .language-toggle { margin-left: 4px; padding: 4px 6px; font-size: 11px; }
+}

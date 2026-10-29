@@ -21,7 +21,8 @@ python3 -m http.server 8765 --bind 127.0.0.1
 
 - `index.html`：个人信息、简介、接收动态和论文。论文直接写入 HTML，不依赖 JavaScript 渲染。
 - `styles.css`：每套主题的 CSS 变量，以及桌面／手机布局。
-- `theme-init.js`、`app.js`：初始配色、切换与论文筛选。
+- `theme-init.js`、`app.js`：初始配色和语言偏好、配色切换与论文筛选。
+- `language.js`：中英文切换；中文简介模板位于 `index.html` 的 `#about-zh`，英文简介仍保留在正文中。
 - `colors.html`、`colors.css`、`colors.js`：配色对比与缩略图尺寸。
 - `assets/avatar.png`：用户提供的主页头像，源文件为工作区根目录的 `大头照.png`；保留原始图片，网页用圆形样式展示。
 - `content.json`：本轮整理的论文数据快照，作为内容参考；页面运行不读取它。修改快照不会自动更新 HTML。
@@ -86,3 +87,13 @@ python3 scripts/refresh-preview-assets.py
 ## 论文类别图标
 
 每篇论文标题前显示主题配色的内嵌 SVG 图标，年月旁有可见英文类别；鼠标悬停图标可查看说明，屏幕阅读器可读到类别名称。当前按主要贡献分为 Scaffold、Benchmark、Survey、Data generation、Self-improvement 和 Empirical study。分类为基于论文和项目说明的主要贡献进行的编辑归类，来源保存在 content.json 的 research_type_source。SkillForge 和 LLMs as Continuous Learners 的经验／技能改进归为 Self-improvement，不自动等同于参数训练；新论文如确有模型训练贡献，再添加 Training 类别。类别不改变原有作者、年份筛选和论文顺序。
+
+## 中英文切换
+
+导航栏的“中文 / English”按钮切换个人资料、简介、News 和配色界面文字。Publications 整栏（标题、作者、会议、日期、类别、筛选与论文链接）保留英文，并显式标记 lang=en。News 中的论文名称与会议名称同样保留英文。
+
+默认英文；选择后保存在独立的 silin-homepage-language 浏览器存储中。URL 的 lang=zh 或 lang=en 优先于保存的偏好，适合直接分享中文版本：https://cslsolow.github.io/?lang=zh 。切换不重载页面，也不重置配色、年份或作者筛选；存储被禁用时仍可用 URL 切换。禁用 JavaScript 时保留静态英文页面。
+
+英文简介在页面正文维护，中文简介在 #about-zh 模板维护；语言脚本克隆现有 News 链接与会议名称，只转换消息句式，接收和正式上线分开表述。修改脚本或翻译后仍须运行资源版本脚本。
+
+语言初始化回归检查：node --test scripts/check-language-init.cjs。另需在浏览器验证中英往返、刷新记忆、URL 优先、配色保留、筛选保留及手机导航。

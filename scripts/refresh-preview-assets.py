@@ -9,7 +9,7 @@ import re
 
 ROOT = Path(__file__).resolve().parents[1]
 PAGES = ('index.html', 'colors.html')
-ASSETS = ('theme-init.js', 'app.js', 'styles.css', 'colors.js', 'colors.css',
+ASSETS = ('theme-init.js', 'app.js', 'language.js', 'styles.css', 'colors.js', 'colors.css',
           'assets/avatar.png', 'assets/favicon.svg')
 TRACKED = set(PAGES + ASSETS)
 ATTRIBUTE = re.compile(r'\b(src|href)="([^"]+)"')

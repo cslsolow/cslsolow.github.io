@@ -1,6 +1,7 @@
 (() => {
   const root = document.documentElement;
   const labels = { mist: '雾蓝', pine: '松绿', clay: '陶土', mauve: '灰紫', ink: '黑白', midnight: '深夜', wine: '酒红', celadon: '青瓷', amber: '琥珀', rose: '蔷薇', indigo: '靛蓝', forest: '墨绿夜' };
+  const englishLabels = { mist: 'Mist', pine: 'Pine', clay: 'Clay', mauve: 'Mauve', ink: 'Ink', midnight: 'Midnight', wine: 'Wine', celadon: 'Celadon', amber: 'Amber', rose: 'Rose', indigo: 'Indigo', forest: 'Forest' };
   const buttons = [...document.querySelectorAll('[data-set-theme]')];
   const currentTheme = document.querySelector('#current-theme');
   const announce = document.querySelector('#theme-announcement');
@@ -8,15 +9,16 @@
     if (!Object.hasOwn(labels, theme)) return;
     root.dataset.theme = theme;
     buttons.forEach(button => button.setAttribute('aria-pressed', String(button.dataset.setTheme === theme)));
-    if (currentTheme) currentTheme.textContent = labels[theme];
+    if (currentTheme) currentTheme.textContent = root.lang === 'zh-CN' ? labels[theme] : englishLabels[theme];
     if (persist) {
       try { localStorage.setItem('silin-homepage-theme', theme); } catch (_) { /* Switching still works without storage. */ }
       const url = new URL(window.location.href);
       url.searchParams.set('theme', theme);
       history.replaceState(null, '', url);
-      if (announce) announce.textContent = `已切换为${labels[theme]}配色`;
+      if (announce) announce.textContent = root.lang === 'zh-CN' ? '已切换为' + labels[theme] + '配色' : 'Switched to the ' + englishLabels[theme] + ' theme';
     }
   }
+  document.addEventListener('homepage-language-change', () => updateTheme(root.dataset.theme, false));
   updateTheme(root.dataset.theme, false);
   buttons.forEach(button => button.addEventListener('click', () => updateTheme(button.dataset.setTheme, true)));
   const appearance = document.querySelector('.appearance');
