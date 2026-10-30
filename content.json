@@ -2,6 +2,35 @@
   "verified_on": "2026-10-19",
   "publications": [
     {
+      "id": "2610.32253",
+      "year": 2026,
+      "venue": "NeurIPS 2026 · Meta-Agents Workshop",
+      "conference_year": 2026,
+      "reviewed": true,
+      "first": false,
+      "cofirst": false,
+      "code": "https://github.com/simple-agent-lab/RSIHub",
+      "title": "RSIHub: A Composable Framework for Agent-Evolution Methods",
+      "authors": "Zimu Wang, Xiaobo Wang, Siyu Ye, Jiaqi Li, Silin Chen, Yuling Shi, Ruobing Wang, Jingjing Zhang, Chaofan Wang, Kai Wu, Mengnan Qi, Kai Cai, Xiaodong Gu, Zilong Zheng",
+      "equal_contributors": [
+        "Zimu Wang",
+        "Xiaobo Wang",
+        "Siyu Ye",
+        "Jiaqi Li"
+      ],
+      "authorship_source": "https://arxiv.org/pdf/2610.32253",
+      "paper": "https://arxiv.org/abs/2610.32253",
+      "source": "https://arxiv.org/abs/2610.32253",
+      "publication_date": "2026-10-23",
+      "publication_month": "2026-10",
+      "publication_date_basis": "arXiv first submission date; workshop acceptance confirmed by arXiv comments and user-provided news.",
+      "publication_date_source": "https://arxiv.org/abs/2610.32253",
+      "research_type": "self-improvement",
+      "research_type_label": "Self-improvement",
+      "research_type_source": "https://arxiv.org/abs/2610.32253",
+      "research_type_basis": "Editorial classification from the abstract: shared composable infrastructure for agent-evolution policies."
+    },
+    {
       "id": "2610.21359",
       "year": 2026,
       "venue": "arXiv",
@@ -223,14 +252,15 @@
       "year": 2026,
       "paper": "RSIHub: A Composable Framework for Agent-Evolution Methods",
       "venue": "Meta-Agents Workshop at NeurIPS 2026",
-      "source": "https://github.com/simple-agent-lab/RSIHub",
+      "source": "https://arxiv.org/abs/2610.32253",
       "acceptance_date": "2026-09-03",
       "acceptance_month": "2026-09",
       "event_type": "acceptance",
       "event_date": "2026-09-03",
       "event_month": "2026-09",
       "evidence_basis": "Acceptance, exact date (03 Sept 2026), and temporary paper link supplied by the user on 2026-10-20.",
-      "text": "Our paper RSIHub: A Composable Framework for Agent-Evolution Methods has been accepted to Meta-Agents Workshop at NeurIPS 2026."
+      "text": "Our paper RSIHub: A Composable Framework for Agent-Evolution Methods has been accepted to Meta-Agents Workshop at NeurIPS 2026.",
+      "code": "https://github.com/simple-agent-lab/RSIHub"
     },
     {
       "year": 2026,
@@ -339,5 +369,6 @@
     ],
     "avatar": "assets/avatar.png",
     "avatar_source": "User-provided 大头照2.png"
-  }
+  },
+  "last_updated_on": "2026-10-30"
 }

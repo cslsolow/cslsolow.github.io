@@ -27,7 +27,7 @@ python3 -m http.server 8765 --bind 127.0.0.1
 - `assets/avatar.png`：用户提供的主页头像，源文件为工作区根目录的 `大头照.png`；保留原始图片，网页用圆形样式展示。
 - `content.json`：本轮整理的论文数据快照，作为内容参考；页面运行不读取它。修改快照不会自动更新 HTML。
 
-11 条论文来自用户指定的 Google Scholar。完整作者优先使用 arXiv 元数据，其余使用 Scholar 详情。SeeRepo、AdverTest 的会议状态另经会议官网核对；Context Compression 的 EMNLP 状态另见作者主页。LLMs as Continuous Learners 使用会议官网正式标题，按 2024-11-21 首发日期归入 2024 年，venue 保留 Internetware 2026；IP&M 记录按 2026 年 8 月线上发表时间分组，venue 保留 2027 年卷期年份。共同一作：SeeRepo 依据论文正文，LLMs as Continuous Learners 依据用户 Scholar 的明确星号标记；筛选包含第一作者及共同第一作者。论文元数据仍建议在正式发布前由作者确认。
+共 12 条论文，原有 11 条来自用户指定的 Google Scholar；RSIHub 于 2026-10-30 按用户提供的 arXiv 链接添加，作者、首发日期和 Workshop 状态依据 arXiv 元数据、摘要页注释及 PDF 首页。完整作者优先使用 arXiv 元数据，其余使用 Scholar 详情。SeeRepo、AdverTest 的会议状态另经会议官网核对；Context Compression 的 EMNLP 状态另见作者主页。LLMs as Continuous Learners 使用会议官网正式标题，按 2024-11-21 首发日期归入 2024 年，venue 保留 Internetware 2026；IP&M 记录按 2026 年 8 月线上发表时间分组，venue 保留 2027 年卷期年份。共同一作：SeeRepo 依据论文正文，LLMs as Continuous Learners 依据用户 Scholar 的明确星号标记；筛选包含第一作者及共同第一作者。论文元数据仍建议在正式发布前由作者确认。
 
 源记录位于工作区 `docs/research/`，不需要随网站发布。身份、单位、实验室、科研经历和邮箱采用用户于 2026-10-19 提供的简介；CV 尚未提供。三位导师姓名链接至各自主页。Kaggle 地址使用 GitHub 个人资料中链接的 chensilin 账户。Survey 的标题、Paper 按钮与 News 链接均使用用户指定的 Preprints.org 地址。
 
@@ -56,7 +56,7 @@ GitHub Pages 配置步骤，主页地址为 `https://cslsolow.github.io/`：
 
 ## News
 
-News 位于 About 和 Publications 之间，列出 Information Processing & Management 的期刊正式上线消息，以及 ASE、ISSTA、EMNLP 和 Internetware 2026 的四条会议接收消息，加上 SWE-Exp 于 2025-08-06 在 SWE-bench Verified 榜单的开源模型及开源 scaffold 类别排名第二消息（榜单链接：https://www.swebench.com/），另有 RSIHub 于 2026-09-03 被 Meta-Agents Workshop at NeurIPS 2026 接收的消息，共七条。SWE-Exp 的排名及日期、RSIHub 的接收状态及日期均采用用户提供的信息。RSIHub 标题暂时链接至 https://github.com/simple-agent-lab/RSIHub 。News 显示年月，按事件日期倒序；接收与正式上线分别表述。消息链接至论文、出版社、会议官网或论文作者主页。已移除独立 Open source 栏；论文已有的 Code 链接保留。
+News 位于 About 和 Publications 之间，列出 Information Processing & Management 的期刊正式上线消息，以及 ASE、ISSTA、EMNLP 和 Internetware 2026 的四条会议接收消息，加上 SWE-Exp 于 2025-08-06 在 SWE-bench Verified 榜单的开源模型及开源 scaffold 类别排名第二消息（榜单链接：https://www.swebench.com/），另有 RSIHub 于 2026-09-03 被 Meta-Agents Workshop at NeurIPS 2026 接收的消息，共七条。SWE-Exp 的排名及日期、RSIHub 的接收状态及日期均采用用户提供的信息。RSIHub 标题和 Paper 链接使用 https://arxiv.org/abs/2610.32253 ，Code 链接保留 https://github.com/simple-agent-lab/RSIHub 。News 显示年月，按事件日期倒序；接收与正式上线分别表述。消息链接至论文、出版社、会议官网或论文作者主页。已移除独立 Open source 栏；论文已有的 Code 链接保留。
 
 Planning over Actions 的论文链接采用 DOI `10.1016/j.ipm.2026.105092`。出版社通知确认最终版本于 2026-08-14 上线，News 与 Publications 使用这一时间；其卷期为 2027 年 1 月，仍在 venue 中注明。7 月的邮件为小修，不作为接收证据。
 
@@ -97,3 +97,5 @@ python3 scripts/refresh-preview-assets.py
 英文简介在页面正文维护，中文简介在 #about-zh 模板维护；语言脚本克隆现有 News 链接与会议名称，只转换消息句式，接收和正式上线分开表述。修改脚本或翻译后仍须运行资源版本脚本。
 
 语言初始化回归检查：node --test scripts/check-language-init.cjs。另需在浏览器验证中英往返、刷新记忆、URL 优先、配色保留、筛选保留及手机导航。
+
+RSIHub 的首发日期为 2026-10-23，归入 2026 年并排在最前；venue 明确显示 NeurIPS 2026 · Meta-Agents Workshop。PDF 首页的共同贡献标记仅对应前四位作者，Silin Chen 为第五作者，因此本条不计入第一／共同第一作者筛选。
