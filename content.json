@@ -368,7 +368,11 @@
       }
     ],
     "avatar": "assets/avatar.png",
-    "avatar_source": "User-provided 大头照2.png"
+    "avatar_source": "User-provided 大头照2.png",
+    "research_focus": {
+      "en": "Coding agents, training data synthesis, self-improvement, RSI, and repository-level generation.",
+      "zh": "编程智能体、训练数据合成、自我改进、RSI 与仓库级代码生成。"
+    }
   },
-  "last_updated_on": "2026-10-30"
+  "last_updated_on": "2026-11-01"
 }
