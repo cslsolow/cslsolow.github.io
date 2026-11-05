@@ -2,6 +2,32 @@
   "verified_on": "2026-10-19",
   "publications": [
     {
+      "id": "2611.01484",
+      "year": 2026,
+      "venue": "arXiv",
+      "reviewed": false,
+      "first": true,
+      "data": "https://huggingface.co/datasets/CrossSWE/CrossSWE-Bench",
+      "title": "CrossSWE: Benchmarking Cross-Repository Joint Development for Coding Agents",
+      "authors": "Silin Chen, Yuling Shi, Heng Lian, Zihan Zhang, Xiaodong Gu, Haotian Lin, Zhensu Sun",
+      "authorship_source": "https://arxiv.org/pdf/2611.01484v1",
+      "paper": "https://arxiv.org/abs/2611.01484",
+      "source": "https://arxiv.org/abs/2611.01484",
+      "publication_date": "2026-11-01",
+      "publication_month": "2026-11",
+      "publication_date_basis": "arXiv first submission date",
+      "publication_date_source": "https://arxiv.org/abs/2611.01484",
+      "research_type": "benchmark",
+      "research_type_label": "Benchmark",
+      "research_type_source": "https://arxiv.org/abs/2611.01484",
+      "research_type_basis": "Primary contribution in the abstract: a benchmark of cross-repository joint development for coding agents.",
+      "cofirst": true,
+      "equal_contributors": [
+        "Silin Chen",
+        "Yuling Shi"
+      ]
+    },
+    {
       "id": "2610.32253",
       "year": 2026,
       "venue": "NeurIPS 2026 · Meta-Agents Workshop",
@@ -374,5 +400,5 @@
       "zh": "编程智能体、训练数据合成、自我改进、RSI 与仓库级代码生成。"
     }
   },
-  "last_updated_on": "2026-11-01"
+  "last_updated_on": "2026-11-05"
 }

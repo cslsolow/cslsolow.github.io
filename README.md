@@ -27,7 +27,7 @@ python3 -m http.server 8765 --bind 127.0.0.1
 - `assets/avatar.png`：用户提供的主页头像，源文件为工作区根目录的 `大头照.png`；保留原始图片，网页用圆形样式展示。
 - `content.json`：本轮整理的论文数据快照，作为内容参考；页面运行不读取它。修改快照不会自动更新 HTML。
 
-共 12 条论文，原有 11 条来自用户指定的 Google Scholar；RSIHub 于 2026-10-30 按用户提供的 arXiv 链接添加，作者、首发日期和 Workshop 状态依据 arXiv 元数据、摘要页注释及 PDF 首页。完整作者优先使用 arXiv 元数据，其余使用 Scholar 详情。SeeRepo、AdverTest 的会议状态另经会议官网核对；Context Compression 的 EMNLP 状态另见作者主页。LLMs as Continuous Learners 使用会议官网正式标题，按 2024-11-21 首发日期归入 2024 年，venue 保留 Internetware 2026；IP&M 记录按 2026 年 8 月线上发表时间分组，venue 保留 2027 年卷期年份。共同一作：SeeRepo 依据论文正文，LLMs as Continuous Learners 依据用户 Scholar 的明确星号标记；筛选包含第一作者及共同第一作者。论文元数据仍建议在正式发布前由作者确认。
+共 13 条论文，原有 11 条来自用户指定的 Google Scholar；RSIHub 于 2026-10-30 按用户提供的 arXiv 链接添加，作者、首发日期和 Workshop 状态依据 arXiv 元数据、摘要页注释及 PDF 首页。完整作者优先使用 arXiv 元数据，其余使用 Scholar 详情。SeeRepo、AdverTest 的会议状态另经会议官网核对；Context Compression 的 EMNLP 状态另见作者主页。LLMs as Continuous Learners 使用会议官网正式标题，按 2024-11-21 首发日期归入 2024 年，venue 保留 Internetware 2026；IP&M 记录按 2026 年 8 月线上发表时间分组，venue 保留 2027 年卷期年份。共同一作：SeeRepo 依据论文正文，LLMs as Continuous Learners 依据用户 Scholar 的明确星号标记；筛选包含第一作者及共同第一作者。论文元数据仍建议在正式发布前由作者确认。
 
 源记录位于工作区 `docs/research/`，不需要随网站发布。身份、单位、实验室、科研经历和邮箱采用用户于 2026-10-19 提供的简介；CV 尚未提供。三位导师姓名链接至各自主页。Kaggle 地址使用 GitHub 个人资料中链接的 chensilin 账户。Survey 的标题、Paper 按钮与 News 链接均使用用户指定的 Preprints.org 地址。
 
@@ -99,3 +99,5 @@ python3 scripts/refresh-preview-assets.py
 语言初始化回归检查：node --test scripts/check-language-init.cjs。另需在浏览器验证中英往返、刷新记忆、URL 优先、配色保留、筛选保留及手机导航。
 
 RSIHub 的首发日期为 2026-10-23，归入 2026 年并排在最前；venue 明确显示 NeurIPS 2026 · Meta-Agents Workshop。PDF 首页的共同贡献标记仅对应前四位作者，Silin Chen 为第五作者，因此本条不计入第一／共同第一作者筛选。
+
+CrossSWE 于 2026-11-05 按用户提供的 arXiv 链接添加；首发日期为 2026-11-01，分类 Benchmark，保留官方作者顺序，PDF 首页标记 Silin Chen 和 Yuling Shi 为共同第一作者。Paper 链接为 https://arxiv.org/abs/2611.01484 ，Data 链接为 https://huggingface.co/datasets/CrossSWE/CrossSWE-Bench 。未见会议接收信息，暂标 arXiv 预印本，未增加接收 News。
