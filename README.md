@@ -86,7 +86,7 @@ python3 scripts/refresh-preview-assets.py
 
 ## 论文类别图标
 
-每篇论文标题前显示主题配色的内嵌 SVG 图标，年月旁有可见英文类别；鼠标悬停图标可查看说明，屏幕阅读器可读到类别名称。当前按主要贡献分为 Scaffold、Benchmark、Survey、Data generation、Self-improvement 和 Empirical study。分类为基于论文和项目说明的主要贡献进行的编辑归类，来源保存在 content.json 的 research_type_source。SkillForge 和 LLMs as Continuous Learners 的经验／技能改进归为 Self-improvement，不自动等同于参数训练；新论文如确有模型训练贡献，再添加 Training 类别。类别不改变原有作者、年份筛选和论文顺序。
+每篇论文标题前显示主题配色的内嵌 SVG 图标，年月旁有可见英文类别；鼠标悬停图标可查看说明，屏幕阅读器可读到类别名称。当前按主要贡献分为 Scaffold、Benchmark、Survey、Data synthesis、Self-improvement 和 Empirical study。分类为基于论文和项目说明的主要贡献进行的编辑归类，来源保存在 content.json 的 research_type_source。SkillForge 和 LLMs as Continuous Learners 的经验／技能改进归为 Self-improvement，不自动等同于参数训练；新论文如确有模型训练贡献，再添加 Training 类别。类别不改变原有作者、年份筛选和论文顺序。
 
 ## 中英文切换
 

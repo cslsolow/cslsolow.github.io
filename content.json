@@ -70,8 +70,8 @@
       "publication_month": "2026-10",
       "publication_date_basis": "arXiv first submission date",
       "publication_date_source": "https://arxiv.org/abs/2610.21359",
-      "research_type": "data-generation",
-      "research_type_label": "Data generation",
+      "research_type": "data-synthesis",
+      "research_type_label": "Data synthesis",
       "research_type_source": "https://arxiv.org/abs/2610.21359",
       "research_type_basis": "Editorial classification of the primary contribution from linked primary paper/project descriptions; not a venue or acceptance status."
     },
@@ -400,5 +400,5 @@
       "zh": "编程智能体、训练数据合成、自我改进、RSI 与仓库级代码生成。"
     }
   },
-  "last_updated_on": "2026-11-05"
+  "last_updated_on": "2026-11-06"
 }
