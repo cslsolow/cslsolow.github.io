@@ -217,7 +217,7 @@
       "reviewed": true,
       "title": "Context Compression for LLM Agents: A Survey of Methods, Failure Modes, and Evaluation",
       "authors": "Yifei Wang, Ziteng Wang, Yuling Shi, Silin Chen, Xinrui Wang, Yueqi Wang, Beijun Shen, Linjing Li, Xiaodong Gu, Julian McAuley, Daniel Dajun Zeng",
-      "paper": "https://www.preprints.org/manuscript/202605.2065",
+      "paper": "https://aclanthology.org/2026.emnlp-main.2396/",
       "source": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=QJBmVEwAAAAJ&pagesize=100&citation_for_view=QJBmVEwAAAAJ:qjMakFHDy7sC",
       "publication_date": "2026-05-29",
       "publication_month": "2026-05",
@@ -225,7 +225,7 @@
       "publication_date_source": "https://www.preprints.org/manuscript/202605.2065",
       "research_type": "survey",
       "research_type_label": "Survey",
-      "research_type_source": "https://www.preprints.org/manuscript/202605.2065",
+      "research_type_source": "https://aclanthology.org/2026.emnlp-main.2396/",
       "research_type_basis": "Editorial classification of the primary contribution from linked primary paper/project descriptions; not a venue or acceptance status."
     },
     {
@@ -292,7 +292,7 @@
       "year": 2026,
       "paper": "Context Compression for LLM Agents",
       "venue": "EMNLP 2026",
-      "source": "https://www.preprints.org/manuscript/202605.2065",
+      "source": "https://aclanthology.org/2026.emnlp-main.2396/",
       "acceptance_date": null,
       "acceptance_source": "https://guxd.github.io/",
       "acceptance_month": "2026-08",
@@ -400,5 +400,5 @@
       "zh": "编程智能体、训练数据合成、自我改进、RSI 与仓库级代码生成。"
     }
   },
-  "last_updated_on": "2026-11-06"
+  "last_updated_on": "2026-11-10"
 }

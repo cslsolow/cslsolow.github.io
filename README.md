@@ -29,7 +29,7 @@ python3 -m http.server 8765 --bind 127.0.0.1
 
 共 13 条论文，原有 11 条来自用户指定的 Google Scholar；RSIHub 于 2026-10-30 按用户提供的 arXiv 链接添加，作者、首发日期和 Workshop 状态依据 arXiv 元数据、摘要页注释及 PDF 首页。完整作者优先使用 arXiv 元数据，其余使用 Scholar 详情。SeeRepo、AdverTest 的会议状态另经会议官网核对；Context Compression 的 EMNLP 状态另见作者主页。LLMs as Continuous Learners 使用会议官网正式标题，按 2024-11-21 首发日期归入 2024 年，venue 保留 Internetware 2026；IP&M 记录按 2026 年 8 月线上发表时间分组，venue 保留 2027 年卷期年份。共同一作：SeeRepo 依据论文正文，LLMs as Continuous Learners 依据用户 Scholar 的明确星号标记；筛选包含第一作者及共同第一作者。论文元数据仍建议在正式发布前由作者确认。
 
-源记录位于工作区 `docs/research/`，不需要随网站发布。身份、单位、实验室、科研经历和邮箱采用用户于 2026-10-19 提供的简介；CV 尚未提供。三位导师姓名链接至各自主页。Kaggle 地址使用 GitHub 个人资料中链接的 chensilin 账户。Survey 的标题、Paper 按钮与 News 链接均使用用户指定的 Preprints.org 地址。
+源记录位于工作区 `docs/research/`，不需要随网站发布。身份、单位、实验室、科研经历和邮箱采用用户于 2026-10-19 提供的简介；CV 尚未提供。三位导师姓名链接至各自主页。Kaggle 地址使用 GitHub 个人资料中链接的 chensilin 账户。Survey 的标题、Paper 按钮与 News 链接均使用用户于 2026-11-10 指定的 ACL Anthology 正式地址：https://aclanthology.org/2026.emnlp-main.2396/ 。首发日期的依据仍保留原 Preprints.org 来源。
 
 ## 部署
 
