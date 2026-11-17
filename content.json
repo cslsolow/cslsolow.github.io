@@ -25,7 +25,13 @@
       "equal_contributors": [
         "Silin Chen",
         "Yuling Shi"
-      ]
+      ],
+      "corresponding_authors": [
+        "Zhensu Sun"
+      ],
+      "corresponding_author_source": "https://arxiv.org/pdf/2611.01484v1",
+      "corresponding_author_basis": "PDF first-page dagger and Corresponding author footnote.",
+      "corresponding_author_verified_on": "2026-11-17"
     },
     {
       "id": "2610.32253",
@@ -54,7 +60,14 @@
       "research_type": "self-improvement",
       "research_type_label": "Self-improvement",
       "research_type_source": "https://arxiv.org/abs/2610.32253",
-      "research_type_basis": "Editorial classification from the abstract: shared composable infrastructure for agent-evolution policies."
+      "research_type_basis": "Editorial classification from the abstract: shared composable infrastructure for agent-evolution policies.",
+      "corresponding_authors": [
+        "Xiaodong Gu",
+        "Zilong Zheng"
+      ],
+      "corresponding_author_source": "https://arxiv.org/pdf/2610.32253",
+      "corresponding_author_basis": "PDF author daggers; user confirmed these two on 2026-11-17.",
+      "corresponding_author_verified_on": "2026-11-17"
     },
     {
       "id": "2610.21359",
@@ -73,7 +86,13 @@
       "research_type": "data-synthesis",
       "research_type_label": "Data synthesis",
       "research_type_source": "https://arxiv.org/abs/2610.21359",
-      "research_type_basis": "Editorial classification of the primary contribution from linked primary paper/project descriptions; not a venue or acceptance status."
+      "research_type_basis": "Editorial classification of the primary contribution from linked primary paper/project descriptions; not a venue or acceptance status.",
+      "corresponding_authors": [
+        "Xiaodong Gu"
+      ],
+      "corresponding_author_source": "https://arxiv.org/pdf/2610.21359",
+      "corresponding_author_basis": "PDF author dagger and Corresponding author footnote.",
+      "corresponding_author_verified_on": "2026-11-17"
     },
     {
       "id": "2606.14061",
@@ -98,7 +117,13 @@
       "research_type": "empirical-study",
       "research_type_label": "Empirical study",
       "research_type_source": "https://arxiv.org/abs/2606.14061",
-      "research_type_basis": "Editorial classification of the primary contribution from linked primary paper/project descriptions; not a venue or acceptance status."
+      "research_type_basis": "Editorial classification of the primary contribution from linked primary paper/project descriptions; not a venue or acceptance status.",
+      "corresponding_authors": [
+        "Xiaodong Gu"
+      ],
+      "corresponding_author_source": "https://arxiv.org/pdf/2606.14061",
+      "corresponding_author_basis": "PDF author dagger and Corresponding author footnote.",
+      "corresponding_author_verified_on": "2026-11-17"
     },
     {
       "year": 2026,
@@ -116,7 +141,13 @@
       "research_type": "scaffold",
       "research_type_label": "Scaffold",
       "research_type_source": "https://arxiv.org/abs/2602.08146",
-      "research_type_basis": "Editorial classification of the primary contribution from linked primary paper/project descriptions; not a venue or acceptance status."
+      "research_type_basis": "Editorial classification of the primary contribution from linked primary paper/project descriptions; not a venue or acceptance status.",
+      "corresponding_authors": [
+        "Xiaodong Gu"
+      ],
+      "corresponding_author_source": "https://arxiv.org/pdf/2602.08146",
+      "corresponding_author_basis": "PDF author envelope marker identifies Xiaodong Gu.",
+      "corresponding_author_verified_on": "2026-11-17"
     },
     {
       "id": "2609.27891",
@@ -135,7 +166,13 @@
       "research_type": "benchmark",
       "research_type_label": "Benchmark",
       "research_type_source": "https://arxiv.org/abs/2609.27891",
-      "research_type_basis": "Editorial classification of the primary contribution from linked primary paper/project descriptions; not a venue or acceptance status."
+      "research_type_basis": "Editorial classification of the primary contribution from linked primary paper/project descriptions; not a venue or acceptance status.",
+      "corresponding_authors": [
+        "Xiaodong Gu"
+      ],
+      "corresponding_author_source": "https://arxiv.org/pdf/2609.27891",
+      "corresponding_author_basis": "PDF footnote explicitly names Xiaodong Gu as corresponding author.",
+      "corresponding_author_verified_on": "2026-11-17"
     },
     {
       "id": "2608.19854",
@@ -154,7 +191,13 @@
       "research_type": "scaffold",
       "research_type_label": "Scaffold",
       "research_type_source": "https://arxiv.org/abs/2608.19854",
-      "research_type_basis": "Editorial classification of the primary contribution from linked primary paper/project descriptions; not a venue or acceptance status."
+      "research_type_basis": "Editorial classification of the primary contribution from linked primary paper/project descriptions; not a venue or acceptance status.",
+      "corresponding_authors": [
+        "Xiaodong Gu"
+      ],
+      "corresponding_author_source": "https://arxiv.org/pdf/2608.19854",
+      "corresponding_author_basis": "PDF footnote explicitly names Xiaodong Gu as corresponding author.",
+      "corresponding_author_verified_on": "2026-11-17"
     },
     {
       "id": "2608.18933",
@@ -173,7 +216,13 @@
       "research_type": "self-improvement",
       "research_type_label": "Self-improvement",
       "research_type_source": "https://arxiv.org/abs/2608.18933",
-      "research_type_basis": "Editorial classification of the primary contribution from linked primary paper/project descriptions; not a venue or acceptance status."
+      "research_type_basis": "Editorial classification of the primary contribution from linked primary paper/project descriptions; not a venue or acceptance status.",
+      "corresponding_authors": [
+        "Xiaodong Gu"
+      ],
+      "corresponding_author_source": "https://arxiv.org/pdf/2608.18933",
+      "corresponding_author_basis": "PDF footnote explicitly names Xiaodong Gu as corresponding author.",
+      "corresponding_author_verified_on": "2026-11-17"
     },
     {
       "year": 2026,
@@ -192,7 +241,13 @@
       "research_type": "scaffold",
       "research_type_label": "Scaffold",
       "research_type_source": "https://doi.org/10.1016/j.ipm.2026.105092",
-      "research_type_basis": "Editorial classification of the primary contribution from linked primary paper/project descriptions; not a venue or acceptance status."
+      "research_type_basis": "Editorial classification of the primary contribution from linked primary paper/project descriptions; not a venue or acceptance status.",
+      "corresponding_authors": [
+        "Beijun Shen"
+      ],
+      "corresponding_author_source": "https://doi.org/10.1016/j.ipm.2026.105092",
+      "corresponding_author_basis": "User confirmed Beijun Shen on 2026-11-17.",
+      "corresponding_author_verified_on": "2026-11-17"
     },
     {
       "id": "2607.11111",
@@ -209,7 +264,13 @@
       "research_type": "scaffold",
       "research_type_label": "Scaffold",
       "research_type_source": "https://arxiv.org/abs/2607.11111",
-      "research_type_basis": "Editorial classification of the primary contribution from linked primary paper/project descriptions; not a venue or acceptance status."
+      "research_type_basis": "Editorial classification of the primary contribution from linked primary paper/project descriptions; not a venue or acceptance status.",
+      "corresponding_authors": [
+        "Xiaodong Gu"
+      ],
+      "corresponding_author_source": "https://arxiv.org/pdf/2607.11111",
+      "corresponding_author_basis": "PDF footnote explicitly names Xiaodong Gu as corresponding author.",
+      "corresponding_author_verified_on": "2026-11-17"
     },
     {
       "year": 2026,
@@ -226,7 +287,13 @@
       "research_type": "survey",
       "research_type_label": "Survey",
       "research_type_source": "https://aclanthology.org/2026.emnlp-main.2396/",
-      "research_type_basis": "Editorial classification of the primary contribution from linked primary paper/project descriptions; not a venue or acceptance status."
+      "research_type_basis": "Editorial classification of the primary contribution from linked primary paper/project descriptions; not a venue or acceptance status.",
+      "corresponding_authors": [
+        "Linjing Li"
+      ],
+      "corresponding_author_source": "https://aclanthology.org/2026.emnlp-main.2396.pdf",
+      "corresponding_author_basis": "Publisher PDF author dagger and Corresponding author footnote.",
+      "corresponding_author_verified_on": "2026-11-17"
     },
     {
       "id": "2507.23361",
@@ -245,7 +312,13 @@
       "research_type": "scaffold",
       "research_type_label": "Scaffold",
       "research_type_source": "https://arxiv.org/abs/2507.23361",
-      "research_type_basis": "Editorial classification of the primary contribution from linked primary paper/project descriptions; not a venue or acceptance status."
+      "research_type_basis": "Editorial classification of the primary contribution from linked primary paper/project descriptions; not a venue or acceptance status.",
+      "corresponding_authors": [
+        "Xiaodong Gu"
+      ],
+      "corresponding_author_source": "https://arxiv.org/pdf/2507.23361v1",
+      "corresponding_author_basis": "First-version PDF footnote explicitly names Xiaodong Gu as corresponding author.",
+      "corresponding_author_verified_on": "2026-11-17"
     },
     {
       "year": 2024,
@@ -270,7 +343,14 @@
       "research_type_label": "Self-improvement",
       "research_type_source": "https://conf.researchr.org/details/internetware-2026/internetware-2026-research-track/45/LLMs-as-Continuous-Learners-Improving-Software-Issue-Reproduction-by-Distilling-Expe",
       "research_type_basis": "Editorial classification of the primary contribution from linked primary paper/project descriptions; not a venue or acceptance status.",
-      "conference_year": 2026
+      "conference_year": 2026,
+      "corresponding_authors": [
+        "Xiaodong Gu",
+        "Yongbin Li"
+      ],
+      "corresponding_author_source": "https://arxiv.org/pdf/2411.13941",
+      "corresponding_author_basis": "Original PDF author daggers; user confirmed Internetware 2026 version uses the same corresponding authors on 2026-11-17.",
+      "corresponding_author_verified_on": "2026-11-17"
     }
   ],
   "news": [
@@ -400,5 +480,5 @@
       "zh": "编程智能体、训练数据合成、自我改进、RSI 与仓库级代码生成。"
     }
   },
-  "last_updated_on": "2026-11-10"
+  "last_updated_on": "2026-11-17"
 }

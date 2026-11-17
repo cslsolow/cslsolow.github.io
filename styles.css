@@ -182,7 +182,7 @@ select { font-size: 12px; background: var(--chip); border: 1px solid var(--line)
 .news-list p { margin: 0; font-size: 14px; line-height: 1.85; }
 .publication-meta { display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; gap: 5px 20px; margin: 0 0 24px; }
 .publication-meta .result-count, .authorship-note { margin: 0; font-size: 11px; color: var(--muted); }
-.contribution-marker { color: var(--accent); font-size: .8em; line-height: 0; }
+.contribution-marker, .corresponding-marker { color: var(--accent); font-size: .8em; line-height: 0; }
 @media (max-width: 430px) { .news-list li { grid-template-columns: 64px minmax(0, 1fr); gap: 10px; } .news-list p { font-size: 13px; } }
 
 .paper-date { display: inline-block; margin-left: 8px; color: var(--muted); font: 10px/1.5 ui-monospace, SFMono-Regular, Menlo, monospace; white-space: nowrap; }
@@ -208,3 +208,6 @@ html[lang="zh-CN"] .about h2, html[lang="zh-CN"] #news h2 { letter-spacing: 0; }
   .nav-wrap { gap: 6px; }
   .language-toggle { margin-left: 4px; padding: 4px 6px; font-size: 11px; }
 }
+
+.authorship-note span { white-space: nowrap; margin-left: 8px; }
+.corresponding-marker { margin-left: 1px; cursor: help; }

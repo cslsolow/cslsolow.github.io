@@ -101,3 +101,7 @@ python3 scripts/refresh-preview-assets.py
 RSIHub 的首发日期为 2026-10-23，归入 2026 年并排在最前；venue 明确显示 NeurIPS 2026 · Meta-Agents Workshop。PDF 首页的共同贡献标记仅对应前四位作者，Silin Chen 为第五作者，因此本条不计入第一／共同第一作者筛选。
 
 CrossSWE 于 2026-11-05 按用户提供的 arXiv 链接添加；首发日期为 2026-11-01，分类 Benchmark，保留官方作者顺序，PDF 首页标记 Silin Chen 和 Yuling Shi 为共同第一作者。Paper 链接为 https://arxiv.org/abs/2611.01484 ，Data 链接为 https://huggingface.co/datasets/CrossSWE/CrossSWE-Bench 。未见会议接收信息，暂标 arXiv 预印本，未增加接收 News。
+
+## 通讯作者标记
+
+作者姓名后的 † 表示通讯作者，* 仍表示共同贡献；Publications 图例对两种标记分别说明。每篇论文在 content.json 中记录 corresponding_authors、来源和核对依据。通讯作者于 2026-11-17 逐篇核对 PDF 首页；Planning over Actions、RSIHub、LLMs as Continuous Learners 的通讯作者另经用户明确确认。RSIHub 按用户确认只标 Xiaodong Gu、Zilong Zheng；首页其他 correspondence 联系人不自动视为通讯作者。更新不改变作者顺序、已有共同贡献标记或作者筛选。
