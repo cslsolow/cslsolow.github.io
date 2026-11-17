@@ -37,7 +37,7 @@ class ResearchMapTests(unittest.TestCase):
         graph = json.loads((self.root / 'research-map.json').read_text())
         papers = json.loads((self.root / 'content.json').read_text())['publications']
         section = re.search(r'<section id="research-map".*?</section>', rendered, re.S).group()
-        self.assertEqual(len(re.findall(r'class="network-node(?: network-node-shared)?"', section)), len(papers))
+        self.assertEqual(len(re.findall(r'class="network-node(?: [^"]+)?"', section)), len(papers))
         self.assertEqual(section.count('class="network-cluster"'), len(graph['topics']))
         self.assertEqual(section.count('class="network-edge"'), len(graph['edges']))
         for paper in papers:
@@ -64,6 +64,21 @@ class ResearchMapTests(unittest.TestCase):
         before = (self.root / 'index.html').read_text()
         self.assertNotEqual(self.render().returncode, 0)
         self.assertEqual((self.root / 'index.html').read_text(), before)
+
+    def test_authorship_badges_follow_publication_metadata(self):
+        self.assertEqual(self.render().returncode, 0)
+        rendered = (self.root / 'index.html').read_text()
+        papers = {p['title']: p for p in json.loads((self.root / 'content.json').read_text())['publications']}
+        graph = json.loads((self.root / 'research-map.json').read_text())
+        for node in graph['nodes']:
+            paper = papers[node['title']]
+            role = 'cofirst' if paper.get('cofirst') or 'Silin Chen' in paper.get('equal_contributors', []) else ('first' if paper.get('first') else '')
+            match = re.search(r'<a class="network-node[^>]*data-node-id="' + node['id'] + r'".*?</a>', rendered, re.S)
+            self.assertIsNotNone(match)
+            self.assertIn('data-author-role="' + role + '"', match.group())
+            self.assertEqual(match.group().count('class="network-authorship"'), int(bool(role)))
+            if role:
+                self.assertIn('Co-first author' if role == 'cofirst' else 'First author', match.group())
 
     def test_missing_paper_does_not_overwrite_page(self):
         graph = json.loads((self.root / 'research-map.json').read_text())

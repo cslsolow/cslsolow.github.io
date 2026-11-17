@@ -172,7 +172,14 @@
       ],
       "corresponding_author_source": "https://arxiv.org/pdf/2609.27891",
       "corresponding_author_basis": "PDF footnote explicitly names Xiaodong Gu as corresponding author.",
-      "corresponding_author_verified_on": "2026-11-17"
+      "corresponding_author_verified_on": "2026-11-17",
+      "cofirst": true,
+      "equal_contributors": [
+        "Silin Chen",
+        "Yufei Yang"
+      ],
+      "authorship_source": "https://arxiv.org/pdf/2609.27891",
+      "authorship_basis": "PDF first-page footnote explicitly names both equal contributors; verified on 2026-11-17."
     },
     {
       "id": "2608.19854",
@@ -197,7 +204,14 @@
       ],
       "corresponding_author_source": "https://arxiv.org/pdf/2608.19854",
       "corresponding_author_basis": "PDF footnote explicitly names Xiaodong Gu as corresponding author.",
-      "corresponding_author_verified_on": "2026-11-17"
+      "corresponding_author_verified_on": "2026-11-17",
+      "cofirst": true,
+      "equal_contributors": [
+        "Silin Chen",
+        "Haoyi Teng"
+      ],
+      "authorship_source": "https://arxiv.org/pdf/2608.19854",
+      "authorship_basis": "PDF first-page footnote explicitly names both equal contributors; verified on 2026-11-17."
     },
     {
       "id": "2608.18933",
@@ -222,7 +236,14 @@
       ],
       "corresponding_author_source": "https://arxiv.org/pdf/2608.18933",
       "corresponding_author_basis": "PDF footnote explicitly names Xiaodong Gu as corresponding author.",
-      "corresponding_author_verified_on": "2026-11-17"
+      "corresponding_author_verified_on": "2026-11-17",
+      "cofirst": true,
+      "equal_contributors": [
+        "Silin Chen",
+        "Han Li"
+      ],
+      "authorship_source": "https://arxiv.org/pdf/2608.18933",
+      "authorship_basis": "PDF first-page footnote explicitly names both equal contributors; verified on 2026-11-17."
     },
     {
       "year": 2026,

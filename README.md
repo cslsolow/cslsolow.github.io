@@ -117,3 +117,5 @@ research-map.json 维护 topics、唯一 nodes、双向主题关联 edges，并�
 research-network.js 提供主题筛选、邻居高亮、键盘聚焦高亮和 Fit graph。语言切换只翻译 topics 与界面，论文简称和 venue 保留英文。小屏下图可在独立区域左右滑动，也可缩放全图；主题索引提供不依赖图形布局的阅读方式。
 
 检查：python3 scripts/check-research-map.py；node --test scripts/check-language-init.cjs。另在浏览器核对主题筛选、SkillForge 的多归属、语言切换、键盘高亮、手机缩放与滑动，以及 Publications 内容保持不变。
+
+关联图节点于 2026-11-17 添加 Silin Chen 的 First author / Co-first author 角标，并在图下提供身份图例；身份读取 content.json，而不以主题颜色区分。共同一作优先于第一作者身份。SkillForge、Repo0、SchrödingerRepo 的共同贡献记录按已核对的 PDF 首页补齐，正文作者星号同步；第一／共同第一作者筛选仍包含 8 篇。

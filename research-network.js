@@ -45,7 +45,8 @@
     if (hovered) {
       const node = byId.get(hovered);
       const labels = memberships(node).map(id => clusters.find(cluster => cluster.dataset.topic === id).querySelector('text').textContent);
-      caption.textContent = node.querySelector('.network-node-name').textContent + ' · ' + labels.join(' / ');
+      const role = { first: 'First author', cofirst: 'Co-first author' }[node.dataset.authorRole];
+      caption.textContent = node.querySelector('.network-node-name').textContent + (role ? ' (' + role + ')' : '') + ' · ' + labels.join(' / ');
     } else if (topic !== 'all') {
       const label = clusters.find(cluster => cluster.dataset.topic === topic).querySelector('text').textContent;
       caption.textContent = label + (chinese ? ' · ' + active.size + ' 篇论文（含跨簇论文）' : ' · ' + active.size + ' papers, including shared-topic work');
