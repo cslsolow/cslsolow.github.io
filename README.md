@@ -105,3 +105,11 @@ CrossSWE 于 2026-11-05 按用户提供的 arXiv 链接添加；首发日期为 
 ## 通讯作者标记
 
 作者姓名后的 † 表示通讯作者，* 仍表示共同贡献；Publications 图例对两种标记分别说明。每篇论文在 content.json 中记录 corresponding_authors、来源和核对依据。通讯作者于 2026-11-17 逐篇核对 PDF 首页；Planning over Actions、RSIHub、LLMs as Continuous Learners 的通讯作者另经用户明确确认。RSIHub 按用户确认只标 Xiaodong Gu、Zilong Zheng；首页其他 correspondence 联系人不自动视为通讯作者。更新不改变作者顺序、已有共同贡献标记或作者筛选。
+
+## 研究脉络树
+
+About 与 News 之间的 Research map 采用“研究问题 → 方向 → 论文”三层结构，收录现有全部 13 篇论文。三条主线为理解与推理、学习与演进、可靠自主开发；这是用于展示研究脉络的编辑分组，不改变 Publications 的类别、顺序或会议标注。树的标题与方向支持中英文切换，论文名称和 venue 保留英文。论文节点使用对应类别的 SVG 图标，点击打开正式论文链接；悬停可读完整论文标题。
+
+在 research-map.json 中维护问题、方向和论文归属，完整标题必须匹配 content.json。新增论文或修改正式链接、venue 后，先运行 python3 scripts/render-research-map.py，再运行 python3 scripts/refresh-preview-assets.py。渲染器会检查每篇论文恰好出现一次，页面使用静态 HTML，即使 JavaScript 不可用也可浏览英文树。链接与 venue 从现有出版数据读取，避免重复维护。
+
+桌面正文宽度达到 700px 时横向分叉；中等正文宽度将问题放在上方；手机窄屏将方向和论文节点纵向展开，不依赖横向滚动。检查命令：python3 scripts/check-research-map.py。

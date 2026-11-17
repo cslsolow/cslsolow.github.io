@@ -5,11 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Silin Chen — AI for Software Engineering</title>
   <meta name="description" content="Silin Chen, incoming Ph.D. student at HKUST (Guangzhou), researching LLM4SE, coding agents, agent self-improvement, benchmarks, and repository-level code generation.">
-  <link rel="icon" href="assets/favicon.svg?v=ea83e207c1c2" type="image/svg+xml">
-  <script src="theme-init.js?v=ea83e207c1c2"></script>
-  <link rel="stylesheet" href="styles.css?v=ea83e207c1c2">
-  <script src="app.js?v=ea83e207c1c2" defer></script>
-  <script src="language.js?v=ea83e207c1c2" defer></script>
+  <link rel="icon" href="assets/favicon.svg?v=b2d617909213" type="image/svg+xml">
+  <script src="theme-init.js?v=b2d617909213"></script>
+  <link rel="stylesheet" href="styles.css?v=b2d617909213">
+  <script src="app.js?v=b2d617909213" defer></script>
+  <script src="language.js?v=b2d617909213" defer></script>
 </head>
 <body>
 <a class="skip-link" href="#main">Skip to content</a>
@@ -19,7 +19,7 @@
 </nav></header>
 <div class="site-layout">
   <aside class="profile" aria-label="Profile">
-    <img class="portrait" src="assets/avatar.png?v=ea83e207c1c2" alt="Portrait of Silin Chen" width="164" height="164">
+    <img class="portrait" src="assets/avatar.png?v=b2d617909213" alt="Portrait of Silin Chen" width="164" height="164">
     <h1>Silin Chen</h1>
     <p class="profile-role">Incoming Ph.D. student</p>
     <p class="profile-subtitle">HKUST (Guangzhou) · MAYU Lab</p>
@@ -52,6 +52,82 @@
       </ul>
       </div>
     </section>
+    <!-- research-map:start -->
+    <section id="research-map" class="research-map" aria-labelledby="research-map-title">
+      <h2 id="research-map-title" data-tree-en="Research map" data-tree-zh="研究脉络">Research map</h2>
+      <p class="research-map-note" data-tree-en="The questions connecting my work. Select a paper to explore." data-tree-zh="从研究问题出发，串起我的工作。点击论文节点可查看详情。">The questions connecting my work. Select a paper to explore.</p>
+      <ol class="research-tree">
+        <li class="tree-question-group" data-question="understand">
+          <h3 class="tree-question"><span class="tree-question-number" aria-hidden="true">Q1</span><span class="tree-question-text" data-tree-en="How can agents understand and reason?" data-tree-zh="智能体如何理解与推理？">How can agents understand and reason?</span></h3>
+          <ul class="tree-branches">
+            <li class="tree-branch">
+              <h4 class="tree-branch-label" data-tree-en="Repository understanding" data-tree-zh="代码仓库理解">Repository understanding</h4>
+              <ul class="tree-papers">
+                <li><a class="tree-paper" lang="en" href="https://arxiv.org/abs/2606.14061" target="_blank" rel="noopener noreferrer" title="LLM Agents Can See Code Repositories"><span class="tree-paper-icon"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="10" cy="10" r="6"/><path d="m15 15 6 6M7 12V9m3 3V7m3 5v-2"/></svg></span><span class="tree-paper-name">SeeRepo</span><span class="tree-paper-venue">ASE ’26</span></a></li>
+                <li><a class="tree-paper" lang="en" href="https://arxiv.org/abs/2607.11111" target="_blank" rel="noopener noreferrer" title="Know Before Fix: QA-Driven Repository Knowledge Acquisition for Software Issue Resolution"><span class="tree-paper-icon"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3" y="3" width="6" height="6" rx="1.5"/><rect x="15" y="15" width="6" height="6" rx="1.5"/><path d="M9 6h7a2 2 0 0 1 2 2v7M6 9v7a2 2 0 0 0 2 2h7"/></svg></span><span class="tree-paper-name">Know Before Fix</span><span class="tree-paper-venue">Preprint</span></a></li>
+              </ul>
+            </li>
+            <li class="tree-branch">
+              <h4 class="tree-branch-label" data-tree-en="Planning &amp; reasoning" data-tree-zh="规划与推理">Planning &amp; reasoning</h4>
+              <ul class="tree-papers">
+                <li><a class="tree-paper" lang="en" href="https://doi.org/10.1016/j.ipm.2026.105092" target="_blank" rel="noopener noreferrer" title="Planning over Actions: Agentic Reasoning for Semi-Structured Table Question Answering"><span class="tree-paper-icon"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3" y="3" width="6" height="6" rx="1.5"/><rect x="15" y="15" width="6" height="6" rx="1.5"/><path d="M9 6h7a2 2 0 0 1 2 2v7M6 9v7a2 2 0 0 0 2 2h7"/></svg></span><span class="tree-paper-name">Planning over Actions</span><span class="tree-paper-venue">IP&amp;M ’27</span></a></li>
+              </ul>
+            </li>
+            <li class="tree-branch">
+              <h4 class="tree-branch-label" data-tree-en="Context management" data-tree-zh="上下文管理">Context management</h4>
+              <ul class="tree-papers">
+                <li><a class="tree-paper" lang="en" href="https://aclanthology.org/2026.emnlp-main.2396/" target="_blank" rel="noopener noreferrer" title="Context Compression for LLM Agents: A Survey of Methods, Failure Modes, and Evaluation"><span class="tree-paper-icon"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 5v15M3 4c3-1 6-1 9 1 3-2 6-2 9-1v15c-3-1-6-1-9 1-3-2-6-2-9-1Z"/><path d="M6 8h3m-3 4h3m6-4h3m-3 4h3"/></svg></span><span class="tree-paper-name">Context Compression</span><span class="tree-paper-venue">EMNLP ’26</span></a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li class="tree-question-group" data-question="evolve">
+          <h3 class="tree-question"><span class="tree-question-number" aria-hidden="true">Q2</span><span class="tree-question-text" data-tree-en="How can agents learn and evolve?" data-tree-zh="智能体如何学习与演进？">How can agents learn and evolve?</span></h3>
+          <ul class="tree-branches">
+            <li class="tree-branch">
+              <h4 class="tree-branch-label" data-tree-en="Experience &amp; skills" data-tree-zh="经验与技能">Experience &amp; skills</h4>
+              <ul class="tree-papers">
+                <li><a class="tree-paper" lang="en" href="https://arxiv.org/abs/2507.23361" target="_blank" rel="noopener noreferrer" title="SWE-Exp: Experience-Driven Software Issue Resolution"><span class="tree-paper-icon"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3" y="3" width="6" height="6" rx="1.5"/><rect x="15" y="15" width="6" height="6" rx="1.5"/><path d="M9 6h7a2 2 0 0 1 2 2v7M6 9v7a2 2 0 0 0 2 2h7"/></svg></span><span class="tree-paper-name">SWE-Exp</span><span class="tree-paper-venue">Preprint</span></a></li>
+                <li><a class="tree-paper" lang="en" href="https://conf.researchr.org/details/internetware-2026/internetware-2026-research-track/45/LLMs-as-Continuous-Learners-Improving-Software-Issue-Reproduction-by-Distilling-Expe" target="_blank" rel="noopener noreferrer" title="LLMs as Continuous Learners: Improving Software Issue Reproduction by Distilling Experiences"><span class="tree-paper-icon"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M19 8a8 8 0 0 0-13-2L3 9m0-5v5h5m-3 7a8 8 0 0 0 13 2l3-3m0 5v-5h-5"/><path d="m9 13 3-4 3 4m-3-4v7"/></svg></span><span class="tree-paper-name">Continuous Learners</span><span class="tree-paper-venue">Internetware ’26</span></a></li>
+                <li><a class="tree-paper" lang="en" href="https://arxiv.org/abs/2608.18933" target="_blank" rel="noopener noreferrer" title="SkillForge: Self-Distilling Agents for Project-Specific Issue Resolution"><span class="tree-paper-icon"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M19 8a8 8 0 0 0-13-2L3 9m0-5v5h5m-3 7a8 8 0 0 0 13 2l3-3m0 5v-5h-5"/><path d="m9 13 3-4 3 4m-3-4v7"/></svg></span><span class="tree-paper-name">SkillForge</span><span class="tree-paper-venue">Preprint</span></a></li>
+              </ul>
+            </li>
+            <li class="tree-branch">
+              <h4 class="tree-branch-label" data-tree-en="Training data synthesis" data-tree-zh="训练数据合成">Training data synthesis</h4>
+              <ul class="tree-papers">
+                <li><a class="tree-paper" lang="en" href="https://arxiv.org/abs/2610.21359" target="_blank" rel="noopener noreferrer" title="SWE-at-Scale: Scalable Issue Synthesis from Historical Bug Fixes"><span class="tree-paper-icon"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><ellipse cx="9" cy="5" rx="6" ry="3"/><path d="M3 5v11c0 1.7 2.7 3 6 3m6-14v5M3 10c0 1.7 2.7 3 6 3"/><path d="m17 11 1.5 3.5L22 16l-3.5 1.5L17 21l-1.5-3.5L12 16l3.5-1.5Z"/></svg></span><span class="tree-paper-name">SWE-at-Scale</span><span class="tree-paper-venue">Preprint</span></a></li>
+              </ul>
+            </li>
+            <li class="tree-branch">
+              <h4 class="tree-branch-label" data-tree-en="Recursive self-improvement" data-tree-zh="递归自我改进">Recursive self-improvement</h4>
+              <ul class="tree-papers">
+                <li><a class="tree-paper" lang="en" href="https://arxiv.org/abs/2610.32253" target="_blank" rel="noopener noreferrer" title="RSIHub: A Composable Framework for Agent-Evolution Methods"><span class="tree-paper-icon"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M19 8a8 8 0 0 0-13-2L3 9m0-5v5h5m-3 7a8 8 0 0 0 13 2l3-3m0 5v-5h-5"/><path d="m9 13 3-4 3 4m-3-4v7"/></svg></span><span class="tree-paper-name">RSIHub</span><span class="tree-paper-venue">NeurIPS ’26 Workshop</span></a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li class="tree-question-group" data-question="reliability">
+          <h3 class="tree-question"><span class="tree-question-number" aria-hidden="true">Q3</span><span class="tree-question-text" data-tree-en="How can agents develop software reliably?" data-tree-zh="智能体如何可靠地开发软件？">How can agents develop software reliably?</span></h3>
+          <ul class="tree-branches">
+            <li class="tree-branch">
+              <h4 class="tree-branch-label" data-tree-en="Generation &amp; testing" data-tree-zh="代码生成与测试">Generation &amp; testing</h4>
+              <ul class="tree-papers">
+                <li><a class="tree-paper" lang="en" href="https://arxiv.org/abs/2608.19854" target="_blank" rel="noopener noreferrer" title="Repo0: Design-Driven Zero-to-All Code Generation"><span class="tree-paper-icon"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3" y="3" width="6" height="6" rx="1.5"/><rect x="15" y="15" width="6" height="6" rx="1.5"/><path d="M9 6h7a2 2 0 0 1 2 2v7M6 9v7a2 2 0 0 0 2 2h7"/></svg></span><span class="tree-paper-name">Repo0</span><span class="tree-paper-venue">Preprint</span></a></li>
+                <li><a class="tree-paper" lang="en" href="https://arxiv.org/abs/2602.08146" target="_blank" rel="noopener noreferrer" title="Test vs Mutant: Adversarial LLM Agents for Robust Unit Test Generation"><span class="tree-paper-icon"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3" y="3" width="6" height="6" rx="1.5"/><rect x="15" y="15" width="6" height="6" rx="1.5"/><path d="M9 6h7a2 2 0 0 1 2 2v7M6 9v7a2 2 0 0 0 2 2h7"/></svg></span><span class="tree-paper-name">AdverTest</span><span class="tree-paper-venue">ISSTA ’26</span></a></li>
+              </ul>
+            </li>
+            <li class="tree-branch">
+              <h4 class="tree-branch-label" data-tree-en="Benchmarks &amp; generalization" data-tree-zh="评测基准与泛化">Benchmarks &amp; generalization</h4>
+              <ul class="tree-papers">
+                <li><a class="tree-paper" lang="en" href="https://arxiv.org/abs/2611.01484" target="_blank" rel="noopener noreferrer" title="CrossSWE: Benchmarking Cross-Repository Joint Development for Coding Agents"><span class="tree-paper-icon"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 20h16M7 16V10m5 6V6m5 10V3"/><path d="m4 5 3-2 4 2 5-3"/></svg></span><span class="tree-paper-name">CrossSWE</span><span class="tree-paper-venue">Preprint</span></a></li>
+                <li><a class="tree-paper" lang="en" href="https://arxiv.org/abs/2609.27891" target="_blank" rel="noopener noreferrer" title="Schrödinger’s Code Repository: Have LLMs Learned SWE-bench or Memorized It?"><span class="tree-paper-icon"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 20h16M7 16V10m5 6V6m5 10V3"/><path d="m4 5 3-2 4 2 5-3"/></svg></span><span class="tree-paper-name">SchrödingerRepo</span><span class="tree-paper-venue">Preprint</span></a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+      </ol>
+    </section>
+    <!-- research-map:end -->
     <section id="news" aria-labelledby="news-title">
       <h2 id="news-title">News</h2>
       <ul class="news-list">
@@ -178,7 +254,7 @@
       <button class="theme-option" aria-label="靛蓝 Indigo 配色" data-set-theme="indigo" aria-pressed="false"><span class="color-dot" style="--swatch:#4b4ea3" aria-hidden="true"></span>靛蓝 Indigo</button>
       <button class="theme-option" aria-label="墨绿夜 Forest 配色" data-set-theme="forest" aria-pressed="false"><span class="color-dot" style="--swatch:#8bd6b5" aria-hidden="true"></span>墨绿夜 Forest</button>
     </div>
-    <a class="compare-link" href="colors.html?v=ea83e207c1c2">比较全部 12 套配色 ↗</a>
+    <a class="compare-link" href="colors.html?v=b2d617909213">比较全部 12 套配色 ↗</a>
   </div>
 </details>
 <div id="theme-announcement" class="sr-only" role="status" aria-live="polite"></div>
@@ -195,5 +271,5 @@
   </ul>
 </template>
 <div id="language-announcement" class="sr-only" role="status" aria-live="polite"></div>
-<noscript><p class="noscript-note">All publications are shown. Enable JavaScript to use the filters and switch colors, or open a themed preview from <a href="colors.html?v=ea83e207c1c2">the color comparison page</a>.</p></noscript>
+<noscript><p class="noscript-note">All publications are shown. Enable JavaScript to use the filters and switch colors, or open a themed preview from <a href="colors.html?v=b2d617909213">the color comparison page</a>.</p></noscript>
 </body></html>

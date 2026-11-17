@@ -59,8 +59,9 @@
     const observer = new IntersectionObserver(entries => {
       const target = entries.find(entry => entry.isIntersecting);
       if (!target) return;
+      const activeSection = target.target.id === 'research-map' ? 'about' : target.target.id;
       navLinks.forEach(link => {
-        const active = link.getAttribute('href') === `#${target.target.id}`;
+        const active = link.getAttribute('href') === `#${activeSection}`;
         link.classList.toggle('active', active);
         if (active) link.setAttribute('aria-current', 'location'); else link.removeAttribute('aria-current');
       });

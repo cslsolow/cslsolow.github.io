@@ -45,6 +45,7 @@
   const description = document.querySelector('meta[name="description"]');
   const englishDescription = description.content;
   const englishTitle = document.title;
+  const treeLabels = [...document.querySelectorAll('[data-tree-en][data-tree-zh]')];
 
   function strong(text) {
     const node = document.createElement('strong');
@@ -73,6 +74,7 @@
     if (!['en', 'zh'].includes(language)) return;
     const chinese = language === 'zh';
     root.lang = chinese ? 'zh-CN' : 'en';
+    treeLabels.forEach(element => { element.textContent = chinese ? element.dataset.treeZh : element.dataset.treeEn; });
     translations.forEach(({ element, zh, english, en }) => {
       if (chinese || en) element.textContent = chinese ? zh : en;
       else element.replaceChildren(...english.map(node => node.cloneNode(true)));

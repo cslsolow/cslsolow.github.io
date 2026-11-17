@@ -1,0 +1,125 @@
+{
+  "questions": [
+    {
+      "id": "understand",
+      "en": "How can agents understand and reason?",
+      "zh": "智能体如何理解与推理？",
+      "branches": [
+        {
+          "en": "Repository understanding",
+          "zh": "代码仓库理解",
+          "papers": [
+            {
+              "title": "LLM Agents Can See Code Repositories",
+              "short": "SeeRepo"
+            },
+            {
+              "title": "Know Before Fix: QA-Driven Repository Knowledge Acquisition for Software Issue Resolution",
+              "short": "Know Before Fix"
+            }
+          ]
+        },
+        {
+          "en": "Planning & reasoning",
+          "zh": "规划与推理",
+          "papers": [
+            {
+              "title": "Planning over Actions: Agentic Reasoning for Semi-Structured Table Question Answering",
+              "short": "Planning over Actions"
+            }
+          ]
+        },
+        {
+          "en": "Context management",
+          "zh": "上下文管理",
+          "papers": [
+            {
+              "title": "Context Compression for LLM Agents: A Survey of Methods, Failure Modes, and Evaluation",
+              "short": "Context Compression"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "evolve",
+      "en": "How can agents learn and evolve?",
+      "zh": "智能体如何学习与演进？",
+      "branches": [
+        {
+          "en": "Experience & skills",
+          "zh": "经验与技能",
+          "papers": [
+            {
+              "title": "SWE-Exp: Experience-Driven Software Issue Resolution",
+              "short": "SWE-Exp"
+            },
+            {
+              "title": "LLMs as Continuous Learners: Improving Software Issue Reproduction by Distilling Experiences",
+              "short": "Continuous Learners"
+            },
+            {
+              "title": "SkillForge: Self-Distilling Agents for Project-Specific Issue Resolution",
+              "short": "SkillForge"
+            }
+          ]
+        },
+        {
+          "en": "Training data synthesis",
+          "zh": "训练数据合成",
+          "papers": [
+            {
+              "title": "SWE-at-Scale: Scalable Issue Synthesis from Historical Bug Fixes",
+              "short": "SWE-at-Scale"
+            }
+          ]
+        },
+        {
+          "en": "Recursive self-improvement",
+          "zh": "递归自我改进",
+          "papers": [
+            {
+              "title": "RSIHub: A Composable Framework for Agent-Evolution Methods",
+              "short": "RSIHub"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reliability",
+      "en": "How can agents develop software reliably?",
+      "zh": "智能体如何可靠地开发软件？",
+      "branches": [
+        {
+          "en": "Generation & testing",
+          "zh": "代码生成与测试",
+          "papers": [
+            {
+              "title": "Repo0: Design-Driven Zero-to-All Code Generation",
+              "short": "Repo0"
+            },
+            {
+              "title": "Test vs Mutant: Adversarial LLM Agents for Robust Unit Test Generation",
+              "short": "AdverTest"
+            }
+          ]
+        },
+        {
+          "en": "Benchmarks & generalization",
+          "zh": "评测基准与泛化",
+          "papers": [
+            {
+              "title": "CrossSWE: Benchmarking Cross-Repository Joint Development for Coding Agents",
+              "short": "CrossSWE"
+            },
+            {
+              "title": "Schrödinger’s Code Repository: Have LLMs Learned SWE-bench or Memorized It?",
+              "short": "SchrödingerRepo"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
