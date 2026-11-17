@@ -29,6 +29,14 @@ def bilingual(tag, css, en, zh, extra=''):
     return f'<{tag} class="{css}" data-tree-en="{esc(en)}" data-tree-zh="{esc(zh)}"{extra}>{html.escape(en)}</{tag}>'
 
 
+def author_role(paper):
+    if paper['authors'].split(',')[0].strip() == 'Silin Chen':
+        return 'first'
+    if paper.get('cofirst') or 'Silin Chen' in paper.get('equal_contributors', []):
+        return 'cofirst'
+    return ''
+
+
 venues = {'arXiv': 'Preprint', 'ASE 2026': 'ASE 2026', 'ISSTA 2026': 'ISSTA 2026',
           'Internetware 2026': 'Internetware 2026', 'IP&M · 2027': 'IP&M 2027',
           'EMNLP 2026': 'EMNLP 2026', 'NeurIPS 2026 · Meta-Agents Workshop': 'NeurIPS 2026 Workshop'}
@@ -68,8 +76,8 @@ for node in nodes:
     x, y, width = node['x'], node['y'], node['width']
     height = node.get('height', 58)
     shared = ' network-node-shared' if len(node['topics']) > 1 else ''
-    cofirst = paper.get('cofirst', False) or 'Silin Chen' in paper.get('equal_contributors', [])
-    role = 'cofirst' if cofirst else ('first' if paper.get('first', False) else '')
+    role = author_role(paper)
+    cofirst = role == 'cofirst'
     role_label = {'first': 'First author', 'cofirst': 'Co-first author'}.get(role, '')
     if role:
         height = max(height, 58)
@@ -96,7 +104,7 @@ for topic in topics:
     for node in nodes:
         if topic['id'] in node['topics']:
             paper = papers[node['title']]
-            role_label = 'Co-first author' if paper.get('cofirst') or 'Silin Chen' in paper.get('equal_contributors', []) else ('First author' if paper.get('first') else '')
+            role_label = {'first': 'First author', 'cofirst': 'Co-first author'}.get(author_role(paper), '')
             role_text = f' <span class="network-index-role" lang="en">{role_label}</span>' if role_label else ''
             parts.append(f'          <li><a href="{esc(paper["paper"])}" target="_blank" rel="noopener noreferrer" lang="en">{html.escape(node["short"])}</a>{role_text}</li>')
     parts.append('        </ul></div>')

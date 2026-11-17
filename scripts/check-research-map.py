@@ -72,7 +72,7 @@ class ResearchMapTests(unittest.TestCase):
         graph = json.loads((self.root / 'research-map.json').read_text())
         for node in graph['nodes']:
             paper = papers[node['title']]
-            role = 'cofirst' if paper.get('cofirst') or 'Silin Chen' in paper.get('equal_contributors', []) else ('first' if paper.get('first') else '')
+            role = 'first' if paper['authors'].split(',')[0].strip() == 'Silin Chen' else ('cofirst' if paper.get('cofirst') or 'Silin Chen' in paper.get('equal_contributors', []) else '')
             match = re.search(r'<a class="network-node[^>]*data-node-id="' + node['id'] + r'".*?</a>', rendered, re.S)
             self.assertIsNotNone(match)
             self.assertIn('data-author-role="' + role + '"', match.group())
