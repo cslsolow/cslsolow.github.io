@@ -36,6 +36,9 @@ class ResearchMapTests(unittest.TestCase):
         self.assertEqual(tree.count('class="tree-paper"'), len(papers))
         self.assertEqual(tree.count('class="tree-question"'), 3)
         self.assertEqual(tree.count('class="tree-branch"'), 8)
+        self.assertEqual(tree.count('class="tree-topic-svg"'), 8)
+        self.assertEqual(tree.count('class="tree-root-svg"'), 3)
+        self.assertEqual(tree.count('class="tree-topic-tooltip"'), 8)
         for paper in papers:
             self.assertIn('href="' + paper['paper'].replace('&', '&amp;') + '"', tree)
         for section in ('about', 'news', 'publications'):

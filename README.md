@@ -112,4 +112,6 @@ About 与 News 之间的 Research map 采用“研究问题 → 方向 → 论�
 
 在 research-map.json 中维护问题、方向和论文归属，完整标题必须匹配 content.json。新增论文或修改正式链接、venue 后，先运行 python3 scripts/render-research-map.py，再运行 python3 scripts/refresh-preview-assets.py。渲染器会检查每篇论文恰好出现一次，页面使用静态 HTML，即使 JavaScript 不可用也可浏览英文树。链接与 venue 从现有出版数据读取，避免重复维护。
 
-桌面正文宽度达到 700px 时横向分叉；中等正文宽度将问题放在上方；手机窄屏将方向和论文节点纵向展开，不依赖横向滚动。检查命令：python3 scripts/check-research-map.py。
+研究树采用开放式纵向主干，每个问题有独立大图标和标题，八个二级方向用不同 SVG 图标代替文字胶囊。悬停、键盘聚焦或手机点按图标时显示双语方向提示；图标有对应 aria-label。论文使用较大的文字链接，按行排列并自然换行，保留类别小图标与 venue。桌面和手机共用层级结构，不依赖横向滚动。检查命令：python3 scripts/check-research-map.py。
+
+研究树图标于 2026-11-17 重设计：代码仓库理解（文件夹与放大镜）、规划推理（路径）、上下文管理（压缩箭头）、经验技能（书本）、数据合成（数据库与星光）、RSI（循环上升）、生成测试（代码与勾）、基准泛化（仪表盘）。主问题分别使用眼睛、演进循环、盾牌图标。

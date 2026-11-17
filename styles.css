@@ -212,47 +212,55 @@ html[lang="zh-CN"] .about h2, html[lang="zh-CN"] #news h2 { letter-spacing: 0; }
 .authorship-note span { white-space: nowrap; margin-left: 8px; }
 .corresponding-marker { margin-left: 1px; cursor: help; }
 
-/* Research questions branch into directions and linked paper nodes. */
+/* Research tree: open question headings and illustrated topic junctions. */
 .research-map { container-type: inline-size; }
 .research-map-note { margin: -8px 0 28px; color: var(--muted); font-size: 12px; line-height: 1.8; }
 .research-tree, .tree-branches, .tree-papers { list-style: none; padding: 0; margin: 0; }
-.research-tree { display: grid; gap: 32px; }
-.tree-question-group { min-width: 0; }
-.tree-question { width: fit-content; max-width: 100%; display: flex; align-items: center; gap: 10px; margin: 0 0 18px; padding: 12px 15px; color: var(--accent); background: var(--accent-soft); border: 1px solid var(--line); border-radius: 18px; box-shadow: 0 2px 5px #00000006; font: 600 14px/1.5 Georgia, "Times New Roman", serif; letter-spacing: 0; }
-.tree-question-number { font: 600 10px/1.5 ui-monospace, SFMono-Regular, Menlo, monospace; opacity: .75; flex: none; }
-.tree-branches { display: grid; gap: 18px; margin-left: 15px; padding-left: 22px; position: relative; }
-.tree-branches::before { content: ""; position: absolute; top: -18px; bottom: 21px; left: 0; border-left: 1.5px solid var(--line); }
-.tree-branch { position: relative; min-width: 0; display: grid; grid-template-columns: 145px minmax(0, 1fr); align-items: center; gap: 17px; }
-.tree-branch::before { content: ""; position: absolute; top: 50%; left: -22px; width: 22px; border-top: 1.5px solid var(--line); }
-.tree-branch-label { position: relative; margin: 0; padding: 8px 11px; border: 1px solid var(--line); background: var(--surface); border-radius: 16px; color: var(--muted); font-family: inherit; font-size: 11px; font-weight: 600; line-height: 1.5; letter-spacing: 0; }
-.tree-branch-label::after { content: ""; position: absolute; left: 100%; top: 50%; width: 18px; border-top: 1.5px solid var(--line); }
-.tree-papers { display: flex; flex-wrap: wrap; align-items: center; gap: 7px; min-width: 0; }
+.research-tree { display: grid; gap: 28px; }
+.tree-question-group { position: relative; min-width: 0; padding: 0 0 26px; border-bottom: 1px solid var(--line); }
+.tree-question-group:last-child { padding-bottom: 0; border-bottom: 0; }
+.tree-question { position: relative; display: flex; align-items: center; gap: 16px; margin: 0 0 22px; color: var(--text); font: 600 19px/1.45 Georgia, "Times New Roman", serif; letter-spacing: -.15px; }
+.tree-question-icon { width: 44px; height: 44px; flex: none; display: inline-flex; align-items: center; justify-content: center; color: var(--accent); background: var(--accent-soft); border-radius: 50%; }
+.tree-root-svg { width: 25px; height: 25px; }
+.tree-question-heading { display: flex; flex-direction: column; gap: 2px; }
+.tree-question-number { color: var(--muted); font: 10px/1.4 ui-monospace, SFMono-Regular, Menlo, monospace; letter-spacing: 1.5px; }
+.tree-branches { display: grid; gap: 16px; margin-left: 21px; padding: 0 0 0 38px; position: relative; }
+.tree-branches::before { content: ""; position: absolute; top: -23px; bottom: 23px; left: 0; width: 1px; background: var(--line); }
+.tree-branch { position: relative; min-width: 0; display: grid; grid-template-columns: 42px minmax(0, 1fr); align-items: center; gap: 18px; }
+.tree-branch::before { content: ""; position: absolute; top: 50%; left: -38px; width: 38px; height: 1px; background: var(--line); }
+.tree-branch-label { position: relative; width: 42px; height: 42px; display: flex; align-items: center; justify-content: center; margin: 0; border: 1px solid var(--line); background: var(--surface); border-radius: 12px; color: var(--accent); cursor: help; }
+.tree-topic-svg { width: 24px; height: 24px; flex: none; }
+.tree-branch-label::after { content: ""; position: absolute; left: 100%; top: 50%; width: 19px; height: 1px; background: var(--line); }
+.tree-branch-label:hover, .tree-branch-label:focus { border-color: var(--accent); background: var(--accent-soft); }
+.tree-branch-label:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+.tree-topic-tooltip { position: absolute; z-index: 8; left: -8px; bottom: calc(100% + 8px); width: max-content; max-width: 220px; padding: 6px 10px; border: 1px solid var(--line); background: var(--surface); color: var(--text); box-shadow: var(--shadow); border-radius: 6px; opacity: 0; visibility: hidden; pointer-events: none; font: 500 11px/1.6 -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans", Arial, sans-serif; letter-spacing: 0; }
+.tree-branch-label:hover .tree-topic-tooltip, .tree-branch-label:focus .tree-topic-tooltip { opacity: 1; visibility: visible; }
+.tree-papers { display: flex; flex-wrap: wrap; align-items: center; gap: 5px 20px; min-width: 0; }
 .tree-papers > li { max-width: 100%; min-width: 0; }
-.tree-paper { max-width: 100%; display: inline-flex; flex-wrap: wrap; align-items: center; justify-content: flex-start; gap: 5px; padding: 5px 9px; border: 1px solid var(--line); background: var(--surface); border-radius: 18px; color: var(--text); font-size: 11px; line-height: 1.6; transition: border-color .15s, background-color .15s; }
-.tree-paper:hover { border-color: var(--accent); background: var(--accent-soft); text-decoration: none; }
+.tree-paper { max-width: 100%; display: inline-flex; flex-wrap: wrap; align-items: center; justify-content: flex-start; gap: 7px; padding: 7px 0; color: var(--text); font-size: 13px; line-height: 1.65; text-decoration: none; border-bottom: 1px solid transparent; transition: color .15s, border-color .15s; }
+.tree-paper:hover { color: var(--accent); border-bottom-color: var(--accent); text-decoration: none; }
 .tree-paper:focus-visible { outline-offset: 3px; }
-.tree-paper-icon { color: var(--accent); display: inline-flex; flex: none; }
-.tree-paper-icon svg { width: 14px; height: 14px; }
+.tree-paper-icon { color: var(--accent); display: inline-flex; flex: none; opacity: .8; }
+.tree-paper-icon svg { width: 16px; height: 16px; }
 .tree-paper-name { font-weight: 600; overflow-wrap: anywhere; }
-.tree-paper-venue { font-size: 9px; color: var(--muted); white-space: nowrap; }
-@container (min-width: 700px) {
-  .tree-question-group { display: grid; grid-template-columns: 190px minmax(0, 1fr); gap: 26px; align-items: center; }
-  .tree-question { margin: 0; width: auto; }
-  .tree-branches { margin-left: 0; padding-left: 20px; gap: 17px; }
-  .tree-branches::before { top: 21px; bottom: 21px; }
-  .tree-branches::after { content: ""; position: absolute; top: 50%; left: -26px; width: 26px; border-top: 1.5px solid var(--line); }
-  .tree-branch { grid-template-columns: 125px minmax(0, 1fr); gap: 14px; }
-  .tree-branch::before { left: -20px; width: 20px; }
-  .tree-branch-label { padding: 7px 10px; }
-  .tree-branch-label::after { width: 15px; }
-}
+.tree-paper-venue { font-size: 10px; color: var(--muted); white-space: nowrap; }
+html[lang="zh-CN"] .tree-question { font-family: inherit; font-size: 18px; letter-spacing: 0; }
 @container (max-width: 480px) {
-  .tree-branch { display: block; }
-  .tree-branch::before { top: 17px; }
-  .tree-branch-label { display: table; max-width: 100%; margin-bottom: 10px; }
-  .tree-branch-label::after { display: none; }
-  .tree-branches::before { bottom: 0; }
-  .tree-paper { padding: 5px 8px; }
-  .research-tree { gap: 26px; }
+  .tree-question { gap: 12px; font-size: 17px; margin-bottom: 18px; }
+  .tree-question-icon { width: 38px; height: 38px; }
+  .tree-root-svg { width: 23px; height: 23px; }
+  .tree-question-heading { min-width: 0; }
+  .tree-branches { margin-left: 18px; padding-left: 20px; gap: 15px; }
+  .tree-branch { grid-template-columns: 36px minmax(0, 1fr); gap: 12px; }
+  .tree-branch::before { left: -20px; width: 20px; }
+  .tree-branch-label { width: 36px; height: 36px; border-radius: 10px; }
+  .tree-topic-svg { width: 21px; height: 21px; }
+  .tree-branch-label::after { width: 13px; }
+  .tree-paper { font-size: 12px; gap: 5px; padding: 4px 0; }
+  .tree-papers { gap: 4px 12px; }
+  .tree-paper-icon svg { width: 14px; height: 14px; }
+  .tree-paper-venue { font-size: 9px; }
+  .tree-branches::before { bottom: 21px; }
+  html[lang="zh-CN"] .tree-question { font-size: 17px; }
 }
 @media (prefers-reduced-motion: reduce) { .tree-paper { transition: none; } }
