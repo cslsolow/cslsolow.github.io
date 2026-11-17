@@ -232,7 +232,7 @@ html[lang="zh-CN"] .about h2, html[lang="zh-CN"] #news h2 { letter-spacing: 0; }
 .network-cluster[data-topic="evaluation"], .network-membership[data-topic="evaluation"] { --topic-color: var(--topic-evaluation); }
 .network-cluster rect { fill: color-mix(in srgb, var(--topic-color) 6%, var(--bg)); stroke: color-mix(in srgb, var(--topic-color) 20%, var(--line)); stroke-width: 1; }
 .network-cluster text { fill: var(--text); font-size: 13px; font-weight: 600; }
-.network-cluster circle { fill: var(--topic-color); }
+.network-topic-icon { color: var(--topic-color); fill: none; stroke: currentColor; stroke-width: 1.7; stroke-linecap: round; stroke-linejoin: round; }
 .network-edge { stroke: var(--muted); stroke-width: 1.4; opacity: .27; transition: opacity .15s, stroke-width .15s; }
 .network-edge-bridge { stroke-dasharray: 4 4; stroke: var(--accent); opacity: .45; }
 .network-node { cursor: pointer; transition: opacity .15s; }

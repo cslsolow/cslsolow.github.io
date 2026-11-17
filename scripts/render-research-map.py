@@ -32,6 +32,13 @@ def bilingual(tag, css, en, zh, extra=''):
 venues = {'arXiv': 'Preprint', 'ASE 2026': 'ASE 2026', 'ISSTA 2026': 'ISSTA 2026',
           'Internetware 2026': 'Internetware 2026', 'IP&M · 2027': 'IP&M 2027',
           'EMNLP 2026': 'EMNLP 2026', 'NeurIPS 2026 · Meta-Agents Workshop': 'NeurIPS 2026 Workshop'}
+topic_icons = {
+    'experience': '<path d="M19 8a8 8 0 0 0-13-2L3 9m0-5v5h5m-3 7a8 8 0 0 0 13 2l3-3m0 5v-5h-5"/><path d="m12 7 1.4 3.6L17 12l-3.6 1.4L12 17l-1.4-3.6L7 12l3.6-1.4Z"/>',
+    'synthesis': '<ellipse cx="9" cy="5" rx="6" ry="3"/><path d="M3 5v11c0 1.7 2.7 3 6 3m6-14v4M3 10c0 1.7 2.7 3 6 3"/><path d="m17 10 1.5 4L22 15.5l-3.5 1.4L17 21l-1.5-4.1-3.5-1.4 3.5-1.5Z"/>',
+    'understanding': '<path d="M3 6a2 2 0 0 1 2-2h5l2 3h7a2 2 0 0 1 2 2v3M3 6v12a2 2 0 0 0 2 2h6"/><circle cx="16" cy="15" r="4"/><path d="m19 18 3 3"/>',
+    'development': '<path d="m8 5-6 7 6 7m8-14 6 7-6 7m-2-17-4 20"/>',
+    'evaluation': '<path d="m12 3 8 3v6c0 4.5-4.5 7.5-8 9-3.5-1.5-8-4.5-8-9V6Z"/><path d="m8 12 3 3 5-6"/>'
+}
 parts = ['    <!-- research-map:start -->',
          '    <section id="research-map" class="research-map" aria-labelledby="research-map-title">',
          '      ' + bilingual('h2', '', 'Research connections', '研究关联', ' id="research-map-title"'),
@@ -49,7 +56,8 @@ parts.extend(['      </div><button class="network-fit" type="button" data-tree-e
 for topic in topics:
     tid = topic['id']
     text_x = topic['x'] + 18 if tid != 'synthesis' else 568
-    parts.append(f'          <g class="network-cluster" data-topic="{esc(tid)}"><rect x="{topic["x"]}" y="{topic["y"]}" width="{topic["width"]}" height="{topic["height"]}" rx="22"/><circle cx="{text_x}" cy="{topic["y"] + 25}" r="3"/><text x="{text_x + 11}" y="{topic["y"] + 30}" data-tree-en="{esc(topic["en"])}" data-tree-zh="{esc(topic["zh"])}">{html.escape(topic["en"])}</text></g>')
+    icon = f'<svg class="network-topic-icon" x="{text_x}" y="{topic["y"] + 15}" width="20" height="20" viewBox="0 0 24 24" aria-hidden="true" focusable="false">{topic_icons[tid]}</svg>'
+    parts.append(f'          <g class="network-cluster" data-topic="{esc(tid)}"><rect x="{topic["x"]}" y="{topic["y"]}" width="{topic["width"]}" height="{topic["height"]}" rx="22"/>{icon}<text x="{text_x + 28}" y="{topic["y"] + 30}" data-tree-en="{esc(topic["en"])}" data-tree-zh="{esc(topic["zh"])}">{html.escape(topic["en"])}</text></g>')
 parts.append('        </g><g class="network-edges" aria-hidden="true">')
 for edge in edges:
     a, b = by_id[edge['source']], by_id[edge['target']]
