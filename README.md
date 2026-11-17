@@ -106,12 +106,14 @@ CrossSWE 于 2026-11-05 按用户提供的 arXiv 链接添加；首发日期为 
 
 作者姓名后的 † 表示通讯作者，* 仍表示共同贡献；Publications 图例对两种标记分别说明。每篇论文在 content.json 中记录 corresponding_authors、来源和核对依据。通讯作者于 2026-11-17 逐篇核对 PDF 首页；Planning over Actions、RSIHub、LLMs as Continuous Learners 的通讯作者另经用户明确确认。RSIHub 按用户确认只标 Xiaodong Gu、Zilong Zheng；首页其他 correspondence 联系人不自动视为通讯作者。更新不改变作者顺序、已有共同贡献标记或作者筛选。
 
-## 研究脉络树
+## 研究关联图
 
-About 与 News 之间的 Research map 采用“研究问题 → 方向 → 论文”三层结构，收录现有全部 13 篇论文。三条主线为理解与推理、学习与演进、可靠自主开发；这是用于展示研究脉络的编辑分组，不改变 Publications 的类别、顺序或会议标注。树的标题与方向支持中英文切换，论文名称和 venue 保留英文。论文节点使用对应类别的 SVG 图标，点击打开正式论文链接；悬停可读完整论文标题。
+About 与 News 之间展示研究主题网络，而非单归属树。现有全部 13 篇论文在 SVG 中各出现一次，可以有多个 topics：SkillForge 同时属于经验演进、数据合成和仓库知识；SWE-at-Scale 同时属于数据合成与评测；AdverTest 同时属于生成与鲁棒性。其余论文根据主要贡献放入经验学习与智能体演进、数据合成、仓库知识与上下文、规划与代码生成、评测与鲁棒性这五个簇。
 
-在 research-map.json 中维护问题、方向和论文归属，完整标题必须匹配 content.json。新增论文或修改正式链接、venue 后，先运行 python3 scripts/render-research-map.py，再运行 python3 scripts/refresh-preview-assets.py。渲染器会检查每篇论文恰好出现一次，页面使用静态 HTML，即使 JavaScript 不可用也可浏览英文树。链接与 venue 从现有出版数据读取，避免重复维护。
+research-map.json 维护 topics、唯一 nodes、双向主题关联 edges，并为全部论文记录 analysis、为每条边记录 reason。连线是编辑性的共享研究主题关系，不表示引用、技术依赖或先后继承。主归属决定节点摆放，彩色小点记录所有主题归属；虚线连接不同主归属的节点。SkillForge 位于经验与数据合成的交界，只有一个论文节点。
 
-研究树采用开放式纵向主干，每个问题有独立大图标和标题，八个二级方向用不同 SVG 图标代替文字胶囊。悬停、键盘聚焦或手机点按图标时显示双语方向提示；图标有对应 aria-label。论文使用较大的文字链接，按行排列并自然换行，保留类别小图标与 venue。桌面和手机共用层级结构，不依赖横向滚动。检查命令：python3 scripts/check-research-map.py。
+运行 python3 scripts/render-research-map.py 生成静态 SVG 与可展开的主题索引，再运行 python3 scripts/refresh-preview-assets.py。节点的作者文献、链接和 venue 从 content.json 读取。图无需外部绘图库，脚本关闭时仍可看图、访问论文和主题索引。
 
-研究树图标于 2026-11-17 重设计：代码仓库理解（文件夹与放大镜）、规划推理（路径）、上下文管理（压缩箭头）、经验技能（书本）、数据合成（数据库与星光）、RSI（循环上升）、生成测试（代码与勾）、基准泛化（仪表盘）。主问题分别使用眼睛、演进循环、盾牌图标。
+research-network.js 提供主题筛选、邻居高亮、键盘聚焦高亮和 Fit graph。语言切换只翻译 topics 与界面，论文简称和 venue 保留英文。小屏下图可在独立区域左右滑动，也可缩放全图；主题索引提供不依赖图形布局的阅读方式。
+
+检查：python3 scripts/check-research-map.py；node --test scripts/check-language-init.cjs。另在浏览器核对主题筛选、SkillForge 的多归属、语言切换、键盘高亮、手机缩放与滑动，以及 Publications 内容保持不变。

@@ -1,4 +1,4 @@
-"""Check the research-map renderer and its publication coverage contract."""
+"""Validate clustered graph coverage and meaningful cross-topic relationships."""
 from pathlib import Path
 import json
 import re
@@ -24,44 +24,59 @@ class ResearchMapTests(unittest.TestCase):
     def render(self):
         return subprocess.run([sys.executable, str(self.root / 'scripts/render-research-map.py')], capture_output=True, text=True)
 
-    def test_complete_unique_static_tree_and_idempotent_render(self):
-        before = (self.root / 'index.html').read_text()
-        self.assertEqual(self.render().returncode, 0)
-        first = (self.root / 'index.html').read_text()
-        self.assertEqual(first, before)
-        self.assertEqual(self.render().returncode, 0)
-        self.assertEqual((self.root / 'index.html').read_text(), first)
-        tree = re.search(r'<section id="research-map".*?</section>', first, re.S).group()
-        papers = json.loads((self.root / 'content.json').read_text())['publications']
-        self.assertEqual(tree.count('class="tree-paper"'), len(papers))
-        self.assertEqual(tree.count('class="tree-question"'), 3)
-        self.assertEqual(tree.count('class="tree-branch"'), 8)
-        self.assertEqual(tree.count('class="tree-topic-svg"'), 8)
-        self.assertEqual(tree.count('class="tree-root-svg"'), 3)
-        self.assertEqual(tree.count('class="tree-topic-tooltip"'), 8)
-        for paper in papers:
-            self.assertIn('href="' + paper['paper'].replace('&', '&amp;') + '"', tree)
-        for section in ('about', 'news', 'publications'):
-            expression = r'<section id="' + section + r'".*?</section>'
-            self.assertEqual(re.search(expression, before, re.S).group(), re.search(expression, first, re.S).group())
+    def save(self, graph):
+        (self.root / 'research-map.json').write_text(json.dumps(graph))
 
-    def test_duplicate_paper_does_not_overwrite_page(self):
-        path = self.root / 'research-map.json'
-        data = json.loads(path.read_text())
-        branch = data['questions'][0]['branches'][0]
-        branch['papers'].append(branch['papers'][0])
-        path.write_text(json.dumps(data))
+    def test_complete_unique_graph_and_idempotence(self):
         before = (self.root / 'index.html').read_text()
-        result = self.render()
-        self.assertNotEqual(result.returncode, 0)
-        self.assertIn('Each publication must appear exactly once', result.stderr)
+        self.assertEqual(self.render().returncode, 0)
+        rendered = (self.root / 'index.html').read_text()
+        self.assertEqual(rendered, before)
+        self.assertEqual(self.render().returncode, 0)
+        self.assertEqual((self.root / 'index.html').read_text(), rendered)
+        graph = json.loads((self.root / 'research-map.json').read_text())
+        papers = json.loads((self.root / 'content.json').read_text())['publications']
+        section = re.search(r'<section id="research-map".*?</section>', rendered, re.S).group()
+        self.assertEqual(len(re.findall(r'class="network-node(?: network-node-shared)?"', section)), len(papers))
+        self.assertEqual(section.count('class="network-cluster"'), len(graph['topics']))
+        self.assertEqual(section.count('class="network-edge"'), len(graph['edges']))
+        for paper in papers:
+            self.assertIn('href="' + paper['paper'].replace('&', '&amp;') + '"', section)
+        for name in ('about', 'news', 'publications'):
+            pattern = r'<section id="' + name + r'".*?</section>'
+            self.assertEqual(re.search(pattern, before, re.S).group(), re.search(pattern, rendered, re.S).group())
+
+    def test_all_papers_analyzed_and_cross_topic_memberships(self):
+        graph = json.loads((self.root / 'research-map.json').read_text())
+        nodes = {node['id']: node for node in graph['nodes']}
+        self.assertEqual(set(graph['analysis']), set(nodes))
+        self.assertTrue(all(graph['analysis'].values()))
+        self.assertTrue({'experience', 'synthesis', 'understanding'} <= set(nodes['skillforge']['topics']))
+        self.assertTrue({'synthesis', 'evaluation'} <= set(nodes['swe-scale']['topics']))
+        self.assertTrue({'development', 'evaluation'} <= set(nodes['advertest']['topics']))
+        self.assertTrue(all(edge.get('reason') for edge in graph['edges']))
+        self.assertTrue(any({edge['source'], edge['target']} == {'skillforge', 'swe-scale'} for edge in graph['edges']))
+
+    def test_duplicate_node_does_not_overwrite_page(self):
+        graph = json.loads((self.root / 'research-map.json').read_text())
+        graph['nodes'].append(graph['nodes'][0])
+        self.save(graph)
+        before = (self.root / 'index.html').read_text()
+        self.assertNotEqual(self.render().returncode, 0)
         self.assertEqual((self.root / 'index.html').read_text(), before)
 
     def test_missing_paper_does_not_overwrite_page(self):
-        path = self.root / 'research-map.json'
-        data = json.loads(path.read_text())
-        data['questions'][0]['branches'][0]['papers'].pop()
-        path.write_text(json.dumps(data))
+        graph = json.loads((self.root / 'research-map.json').read_text())
+        graph['nodes'].pop()
+        self.save(graph)
+        before = (self.root / 'index.html').read_text()
+        self.assertNotEqual(self.render().returncode, 0)
+        self.assertEqual((self.root / 'index.html').read_text(), before)
+
+    def test_invalid_edge_does_not_overwrite_page(self):
+        graph = json.loads((self.root / 'research-map.json').read_text())
+        graph['edges'].append({'source': 'missing', 'target': 'skillforge'})
+        self.save(graph)
         before = (self.root / 'index.html').read_text()
         self.assertNotEqual(self.render().returncode, 0)
         self.assertEqual((self.root / 'index.html').read_text(), before)

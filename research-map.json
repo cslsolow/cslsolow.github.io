@@ -1,125 +1,293 @@
 {
-  "questions": [
+  "topics": [
     {
-      "id": "understand",
-      "en": "How can agents understand and reason?",
-      "zh": "智能体如何理解与推理？",
-      "branches": [
-        {
-          "en": "Repository understanding",
-          "zh": "代码仓库理解",
-          "papers": [
-            {
-              "title": "LLM Agents Can See Code Repositories",
-              "short": "SeeRepo"
-            },
-            {
-              "title": "Know Before Fix: QA-Driven Repository Knowledge Acquisition for Software Issue Resolution",
-              "short": "Know Before Fix"
-            }
-          ]
-        },
-        {
-          "en": "Planning & reasoning",
-          "zh": "规划与推理",
-          "papers": [
-            {
-              "title": "Planning over Actions: Agentic Reasoning for Semi-Structured Table Question Answering",
-              "short": "Planning over Actions"
-            }
-          ]
-        },
-        {
-          "en": "Context management",
-          "zh": "上下文管理",
-          "papers": [
-            {
-              "title": "Context Compression for LLM Agents: A Survey of Methods, Failure Modes, and Evaluation",
-              "short": "Context Compression"
-            }
-          ]
-        }
+      "id": "experience",
+      "en": "Experience & agent evolution",
+      "zh": "经验学习与智能体演进",
+      "x": 16,
+      "y": 16,
+      "width": 468,
+      "height": 278
+    },
+    {
+      "id": "synthesis",
+      "en": "Data synthesis",
+      "zh": "数据合成",
+      "x": 438,
+      "y": 16,
+      "width": 366,
+      "height": 278
+    },
+    {
+      "id": "understanding",
+      "en": "Repository knowledge & context",
+      "zh": "仓库知识与上下文",
+      "x": 16,
+      "y": 322,
+      "width": 468,
+      "height": 238
+    },
+    {
+      "id": "development",
+      "en": "Planning & generation",
+      "zh": "规划与代码生成",
+      "x": 510,
+      "y": 322,
+      "width": 294,
+      "height": 238
+    },
+    {
+      "id": "evaluation",
+      "en": "Evaluation & robustness",
+      "zh": "评测与鲁棒性",
+      "x": 16,
+      "y": 588,
+      "width": 788,
+      "height": 156
+    }
+  ],
+  "nodes": [
+    {
+      "id": "continuous",
+      "title": "LLMs as Continuous Learners: Improving Software Issue Reproduction by Distilling Experiences",
+      "short": "Continuous Learners",
+      "x": 126,
+      "y": 112,
+      "width": 182,
+      "topics": [
+        "experience"
       ]
     },
     {
-      "id": "evolve",
-      "en": "How can agents learn and evolve?",
-      "zh": "智能体如何学习与演进？",
-      "branches": [
-        {
-          "en": "Experience & skills",
-          "zh": "经验与技能",
-          "papers": [
-            {
-              "title": "SWE-Exp: Experience-Driven Software Issue Resolution",
-              "short": "SWE-Exp"
-            },
-            {
-              "title": "LLMs as Continuous Learners: Improving Software Issue Reproduction by Distilling Experiences",
-              "short": "Continuous Learners"
-            },
-            {
-              "title": "SkillForge: Self-Distilling Agents for Project-Specific Issue Resolution",
-              "short": "SkillForge"
-            }
-          ]
-        },
-        {
-          "en": "Training data synthesis",
-          "zh": "训练数据合成",
-          "papers": [
-            {
-              "title": "SWE-at-Scale: Scalable Issue Synthesis from Historical Bug Fixes",
-              "short": "SWE-at-Scale"
-            }
-          ]
-        },
-        {
-          "en": "Recursive self-improvement",
-          "zh": "递归自我改进",
-          "papers": [
-            {
-              "title": "RSIHub: A Composable Framework for Agent-Evolution Methods",
-              "short": "RSIHub"
-            }
-          ]
-        }
+      "id": "swe-exp",
+      "title": "SWE-Exp: Experience-Driven Software Issue Resolution",
+      "short": "SWE-Exp",
+      "x": 337,
+      "y": 112,
+      "width": 156,
+      "topics": [
+        "experience"
       ]
     },
     {
-      "id": "reliability",
-      "en": "How can agents develop software reliably?",
-      "zh": "智能体如何可靠地开发软件？",
-      "branches": [
-        {
-          "en": "Generation & testing",
-          "zh": "代码生成与测试",
-          "papers": [
-            {
-              "title": "Repo0: Design-Driven Zero-to-All Code Generation",
-              "short": "Repo0"
-            },
-            {
-              "title": "Test vs Mutant: Adversarial LLM Agents for Robust Unit Test Generation",
-              "short": "AdverTest"
-            }
-          ]
-        },
-        {
-          "en": "Benchmarks & generalization",
-          "zh": "评测基准与泛化",
-          "papers": [
-            {
-              "title": "CrossSWE: Benchmarking Cross-Repository Joint Development for Coding Agents",
-              "short": "CrossSWE"
-            },
-            {
-              "title": "Schrödinger’s Code Repository: Have LLMs Learned SWE-bench or Memorized It?",
-              "short": "SchrödingerRepo"
-            }
-          ]
-        }
+      "id": "rsihub",
+      "title": "RSIHub: A Composable Framework for Agent-Evolution Methods",
+      "short": "RSIHub",
+      "x": 126,
+      "y": 226,
+      "width": 156,
+      "topics": [
+        "experience"
+      ]
+    },
+    {
+      "id": "skillforge",
+      "title": "SkillForge: Self-Distilling Agents for Project-Specific Issue Resolution",
+      "short": "SkillForge",
+      "x": 447,
+      "y": 226,
+      "width": 178,
+      "topics": [
+        "experience",
+        "synthesis",
+        "understanding"
+      ]
+    },
+    {
+      "id": "swe-scale",
+      "title": "SWE-at-Scale: Scalable Issue Synthesis from Historical Bug Fixes",
+      "short": "SWE-at-Scale",
+      "x": 682,
+      "y": 135,
+      "width": 182,
+      "topics": [
+        "synthesis",
+        "evaluation"
+      ]
+    },
+    {
+      "id": "seerepo",
+      "title": "LLM Agents Can See Code Repositories",
+      "short": "SeeRepo",
+      "x": 132,
+      "y": 402,
+      "width": 174,
+      "topics": [
+        "understanding"
+      ]
+    },
+    {
+      "id": "know",
+      "title": "Know Before Fix: QA-Driven Repository Knowledge Acquisition for Software Issue Resolution",
+      "short": "Know Before Fix",
+      "x": 365,
+      "y": 402,
+      "width": 184,
+      "topics": [
+        "understanding"
+      ]
+    },
+    {
+      "id": "survey",
+      "title": "Context Compression for LLM Agents: A Survey of Methods, Failure Modes, and Evaluation",
+      "short": "Context Compression",
+      "x": 246,
+      "y": 506,
+      "width": 210,
+      "topics": [
+        "understanding"
+      ]
+    },
+    {
+      "id": "planning",
+      "title": "Planning over Actions: Agentic Reasoning for Semi-Structured Table Question Answering",
+      "short": "Planning over Actions",
+      "x": 657,
+      "y": 394,
+      "width": 204,
+      "topics": [
+        "development"
+      ],
+      "height": 50
+    },
+    {
+      "id": "repo0",
+      "title": "Repo0: Design-Driven Zero-to-All Code Generation",
+      "short": "Repo0",
+      "x": 657,
+      "y": 456,
+      "width": 174,
+      "topics": [
+        "development"
+      ],
+      "height": 50
+    },
+    {
+      "id": "advertest",
+      "title": "Test vs Mutant: Adversarial LLM Agents for Robust Unit Test Generation",
+      "short": "AdverTest",
+      "x": 657,
+      "y": 518,
+      "width": 174,
+      "topics": [
+        "development",
+        "evaluation"
+      ],
+      "height": 50
+    },
+    {
+      "id": "crossswe",
+      "title": "CrossSWE: Benchmarking Cross-Repository Joint Development for Coding Agents",
+      "short": "CrossSWE",
+      "x": 222,
+      "y": 674,
+      "width": 190,
+      "topics": [
+        "evaluation"
+      ]
+    },
+    {
+      "id": "schrodinger",
+      "title": "Schrödinger’s Code Repository: Have LLMs Learned SWE-bench or Memorized It?",
+      "short": "SchrödingerRepo",
+      "x": 588,
+      "y": 674,
+      "width": 210,
+      "topics": [
+        "evaluation"
       ]
     }
-  ]
+  ],
+  "edges": [
+    {
+      "source": "continuous",
+      "target": "swe-exp",
+      "reason": "Both distill reusable experience from prior software-engineering tasks."
+    },
+    {
+      "source": "continuous",
+      "target": "skillforge",
+      "reason": "Historical-task experience learning and project-specific skill distillation."
+    },
+    {
+      "source": "swe-exp",
+      "target": "skillforge",
+      "reason": "Reuse of distilled repair knowledge in later tasks."
+    },
+    {
+      "source": "rsihub",
+      "target": "skillforge",
+      "reason": "Persistent skill updates are one form of agent evolution."
+    },
+    {
+      "source": "skillforge",
+      "target": "swe-scale",
+      "reason": "Synthesis of executable software issues; SkillForge uses them to acquire skills."
+    },
+    {
+      "source": "skillforge",
+      "target": "know",
+      "reason": "Acquiring repository-specific knowledge before resolving new issues."
+    },
+    {
+      "source": "swe-scale",
+      "target": "crossswe",
+      "reason": "Construction of executable, verifiable software-engineering evaluation tasks."
+    },
+    {
+      "source": "swe-scale",
+      "target": "schrodinger",
+      "reason": "Evaluation quality: diverse generated tasks versus leakage-aware evaluation."
+    },
+    {
+      "source": "seerepo",
+      "target": "know",
+      "reason": "Repository understanding through explicit context representations."
+    },
+    {
+      "source": "seerepo",
+      "target": "survey",
+      "reason": "Repository context representation and token/context efficiency."
+    },
+    {
+      "source": "survey",
+      "target": "know",
+      "reason": "Structured context and repository evidence for agents."
+    },
+    {
+      "source": "planning",
+      "target": "repo0",
+      "reason": "Explicit action spaces and planning over structured state."
+    },
+    {
+      "source": "advertest",
+      "target": "repo0",
+      "reason": "Agent-driven code production with executable feedback."
+    },
+    {
+      "source": "advertest",
+      "target": "crossswe",
+      "reason": "Executable tests as validation of software behavior."
+    },
+    {
+      "source": "crossswe",
+      "target": "schrodinger",
+      "reason": "Evaluation of generalization beyond familiar single-repository settings."
+    }
+  ],
+  "analysis": {
+    "continuous": "Reflection and a hierarchical pool update reusable issue-reproduction experience.",
+    "swe-exp": "Distills successful and failed repair trajectories into a reusable experience bank.",
+    "skillforge": "Synthesizes repository-specific issues, resolves them, and distills entity-grounded skills: experience, synthesis, and repository knowledge.",
+    "rsihub": "Composable infrastructure for policies that evolve prompts, skills, tools, and orchestration.",
+    "swe-scale": "Synthesizes realistic executable issues from historical fixes to expand task/evaluation supply.",
+    "seerepo": "Studies visual structure as repository context and its effect on agent accuracy and input costs.",
+    "know": "QA-driven repository knowledge acquisition before patch generation.",
+    "survey": "Survey of context compression, memory representations, failure modes, and evaluation.",
+    "planning": "Table QA through explicit actions and agentic search over structured tables.",
+    "repo0": "Plans repository architecture through requirement/component graphs before code generation.",
+    "advertest": "Adversarial test and mutant generation improves fault-detection robustness.",
+    "crossswe": "Benchmark of jointly necessary cross-repository changes with executable verification.",
+    "schrodinger": "Semantics-preserving repository perturbations distinguish memorization from robust repository reasoning."
+  }
 }

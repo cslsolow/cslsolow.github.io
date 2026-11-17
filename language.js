@@ -75,9 +75,6 @@
     const chinese = language === 'zh';
     root.lang = chinese ? 'zh-CN' : 'en';
     treeLabels.forEach(element => { element.textContent = chinese ? element.dataset.treeZh : element.dataset.treeEn; });
-    document.querySelectorAll('.tree-branch-label').forEach(element => {
-      element.setAttribute('aria-label', element.querySelector('.tree-topic-tooltip').textContent);
-    });
     translations.forEach(({ element, zh, english, en }) => {
       if (chinese || en) element.textContent = chinese ? zh : en;
       else element.replaceChildren(...english.map(node => node.cloneNode(true)));

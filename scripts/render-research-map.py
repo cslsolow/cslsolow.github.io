@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Render the bilingual research tree as static, accessible HTML."""
+"""Render a clustered paper network with overlapping topic memberships."""
 from pathlib import Path
 import html
 import json
@@ -8,75 +8,78 @@ import re
 ROOT = Path(__file__).resolve().parents[1]
 page = (ROOT / 'index.html').read_text()
 papers = {paper['title']: paper for paper in json.loads((ROOT / 'content.json').read_text())['publications']}
-questions = json.loads((ROOT / 'research-map.json').read_text())['questions']
-icons = {}
-for block in re.findall(r'<article class="publication"[^>]*>.*?</article>', page, re.S):
-    title = html.unescape(re.search(r'<h3 class="paper-title">.*?<a [^>]*>(.*?)</a>', block, re.S).group(1))
-    icons[title] = re.search(r'<svg.*?</svg>', block, re.S).group()
+graph = json.loads((ROOT / 'research-map.json').read_text())
+nodes, topics, edges = graph['nodes'], graph['topics'], graph['edges']
+assert len(nodes) == len({node['id'] for node in nodes}), 'Duplicate graph node'
+assert len(nodes) == len({node['title'] for node in nodes}) == len(papers), 'Every publication needs exactly one graph node'
+assert {node['title'] for node in nodes} == set(papers), 'Publication coverage mismatch'
+topic_ids = {topic['id'] for topic in topics}
+assert len(topic_ids) == len(topics), 'Duplicate topic'
+assert all(node['topics'] and len(set(node['topics'])) == len(node['topics']) and set(node['topics']) <= topic_ids for node in nodes), 'Invalid topic membership'
+by_id = {node['id']: node for node in nodes}
+assert all(edge['source'] in by_id and edge['target'] in by_id and edge['source'] != edge['target'] for edge in edges), 'Invalid graph edge'
+assert len({tuple(sorted((e['source'], e['target']))) for e in edges}) == len(edges), 'Duplicate graph edge'
 
 
-def label(tag, css, en, zh):
-    return f'<{tag} class="{css}" data-tree-en="{html.escape(en, quote=True)}" data-tree-zh="{html.escape(zh, quote=True)}">{html.escape(en)}</{tag}>'
+def esc(value):
+    return html.escape(str(value), quote=True)
 
 
-def svg(paths, css):
-    return '<svg class="' + css + '" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">' + paths + '</svg>'
+def bilingual(tag, css, en, zh, extra=''):
+    return f'<{tag} class="{css}" data-tree-en="{esc(en)}" data-tree-zh="{esc(zh)}"{extra}>{html.escape(en)}</{tag}>'
 
 
-question_icons = {
-    'understand': '<path d="M2 12s3.5-6 10-6 10 6 10 6-3.5 6-10 6S2 12 2 12Z"/><circle cx="12" cy="12" r="3"/><path d="M12 2v2m0 16v2M4 4l1.5 1.5M18.5 18.5 20 20"/>',
-    'evolve': '<path d="M19 8a8 8 0 0 0-13-2L3 9m0-5v5h5m-3 7a8 8 0 0 0 13 2l3-3m0 5v-5h-5"/><path d="m12 7 1.4 3.6L17 12l-3.6 1.4L12 17l-1.4-3.6L7 12l3.6-1.4Z"/>',
-    'reliability': '<path d="m12 3 8 3v6c0 4.5-4.5 7.5-8 9-3.5-1.5-8-4.5-8-9V6Z"/><path d="m8 12 3 3 5-6"/>'
-}
-topic_icons = {
-    'Repository understanding': '<path d="M3 6a2 2 0 0 1 2-2h5l2 3h7a2 2 0 0 1 2 2v3M3 6v12a2 2 0 0 0 2 2h6"/><circle cx="16" cy="15" r="4"/><path d="m19 18 3 3"/>',
-    'Planning & reasoning': '<circle cx="5" cy="5" r="2"/><circle cx="19" cy="19" r="2"/><path d="M5 7v7a3 3 0 0 0 3 3h3a3 3 0 0 0 0-6h-1a3 3 0 0 1 0-6h7m-3-3 3 3-3 3"/>',
-    'Context management': '<path d="M3 3h7M3 7h5m-5 4h4M21 3h-7m7 4h-5m5 4h-4M7 14l5 5 5-5m-5-8v13M5 22h14"/>',
-    'Experience & skills': '<path d="M12 5v16M3 4c3-1 6-1 9 1 3-2 6-2 9-1v15c-3-1-6-1-9 1-3-2-6-2-9-1Z"/><path d="m7 8 .8 2.2L10 11l-2.2.8L7 14l-.8-2.2L4 11l2.2-.8M15 9h3m-3 4h3"/>',
-    'Training data synthesis': '<ellipse cx="9" cy="5" rx="6" ry="3"/><path d="M3 5v11c0 1.7 2.7 3 6 3m6-14v4M3 10c0 1.7 2.7 3 6 3M3 15c0 1.7 2.7 3 6 3"/><path d="m17 10 1.5 4L22 15.5l-3.5 1.4L17 21l-1.5-4.1-3.5-1.4 3.5-1.5Z"/>',
-    'Recursive self-improvement': '<path d="M20 10a8 8 0 1 0-2 8M20 4v6h-6"/><path d="m8 12 4-4 4 4m-4-4v9"/><circle cx="20" cy="18" r="2"/>',
-    'Generation & testing': '<path d="m8 5-6 6 6 6m8-12 6 6-3 3m-6-12-3 18"/><path d="m15 19 2 2 5-5"/>',
-    'Benchmarks & generalization': '<path d="M3 18a9 9 0 1 1 18 0M6 18h12M12 18l4-7M5 11l2 1m3-7 .5 2M18 7l-1.5 1.5"/><circle cx="12" cy="18" r="1.5"/>'
-}
-
-
-venues = {
-    'arXiv': 'Preprint',
-    'ASE 2026': "ASE ’26",
-    'ISSTA 2026': "ISSTA ’26",
-    'Internetware 2026': "Internetware ’26",
-    'IP&M · 2027': "IP&M ’27",
-    'EMNLP 2026': "EMNLP ’26",
-    'NeurIPS 2026 · Meta-Agents Workshop': "NeurIPS ’26 Workshop"
-}
-parts = [
-    '    <!-- research-map:start -->',
-    '    <section id="research-map" class="research-map" aria-labelledby="research-map-title">',
-    '      <h2 id="research-map-title" data-tree-en="Research map" data-tree-zh="研究脉络">Research map</h2>',
-    '      <p class="research-map-note" data-tree-en="Explore the questions behind my work. Hover or focus a topic icon for its label." data-tree-zh="从研究问题出发，串起我的工作。悬停或点按图标可查看方向，点击论文可阅读。">Explore the questions behind my work. Hover or focus a topic icon for its label.</p>',
-    '      <ol class="research-tree">'
-]
-seen = []
-for index, question in enumerate(questions, 1):
-    parts.append(f'        <li class="tree-question-group" data-question="{html.escape(question["id"], quote=True)}">')
-    parts.append('          <h3 class="tree-question"><span class="tree-question-icon">' + svg(question_icons[question['id']], 'tree-root-svg') + '</span><span class="tree-question-heading"><span class="tree-question-number" aria-hidden="true">0' + str(index) + '</span>' + label('span', 'tree-question-text', question['en'], question['zh']) + '</span></h3>')
-    parts.append('          <ul class="tree-branches">')
-    for branch in question['branches']:
-        parts.append('            <li class="tree-branch">')
-        parts.append('              <h4 class="tree-branch-label" tabindex="0" aria-label="' + html.escape(branch['en'], quote=True) + '">' + svg(topic_icons[branch['en']], 'tree-topic-svg') + label('span', 'tree-topic-tooltip', branch['en'], branch['zh']) + '</h4>')
-        parts.append('              <ul class="tree-papers">')
-        for work in branch['papers']:
-            title = work['title']
-            paper = papers[title]
-            seen.append(title)
-            venue = venues.get(paper['venue'], paper['venue'])
-            parts.append('                <li><a class="tree-paper" lang="en" href="' + html.escape(paper['paper'], quote=True) + '" target="_blank" rel="noopener noreferrer" title="' + html.escape(title, quote=True) + '"><span class="tree-paper-icon">' + icons[title] + '</span><span class="tree-paper-name">' + html.escape(work['short']) + '</span><span class="tree-paper-venue">' + html.escape(venue) + '</span></a></li>')
-        parts.extend(['              </ul>', '            </li>'])
-    parts.extend(['          </ul>', '        </li>'])
-parts.extend(['      </ol>', '    </section>', '    <!-- research-map:end -->'])
-assert len(seen) == len(set(seen)) == len(papers), 'Each publication must appear exactly once in the research map'
-assert set(seen) == set(papers)
+venues = {'arXiv': 'Preprint', 'ASE 2026': 'ASE 2026', 'ISSTA 2026': 'ISSTA 2026',
+          'Internetware 2026': 'Internetware 2026', 'IP&M · 2027': 'IP&M 2027',
+          'EMNLP 2026': 'EMNLP 2026', 'NeurIPS 2026 · Meta-Agents Workshop': 'NeurIPS 2026 Workshop'}
+parts = ['    <!-- research-map:start -->',
+         '    <section id="research-map" class="research-map" aria-labelledby="research-map-title">',
+         '      ' + bilingual('h2', '', 'Research connections', '研究关联', ' id="research-map-title"'),
+         '      ' + bilingual('p', 'research-map-note', 'Shared ideas connect these papers. A paper can belong to more than one topic.', '用共享的研究主题连接论文；一篇论文可以同时属于多个簇。'),
+         '      <div class="network-toolbar"><div class="network-filters" role="group" aria-label="Research topics">',
+         '        ' + bilingual('button', 'network-filter', 'All topics', '全部主题', ' type="button" data-topic-filter="all" aria-pressed="true" hidden')]
+for topic in topics:
+    parts.append('        ' + bilingual('button', 'network-filter', topic['en'], topic['zh'], f' type="button" data-topic-filter="{esc(topic["id"])}" aria-pressed="false" hidden'))
+parts.extend(['      </div><button class="network-fit" type="button" data-tree-en="Fit graph" data-tree-zh="缩放全图" hidden>Fit graph</button></div>',
+              '      <div class="network-viewport" tabindex="0" aria-label="Research network. Scroll horizontally to explore on smaller screens.">',
+              '      <svg class="research-network" viewBox="0 0 820 768" role="group" aria-labelledby="network-title network-description">',
+              '        <title id="network-title">Research topics and paper connections</title>',
+              '        <desc id="network-description">13 papers in five overlapping topics. SkillForge links experience, data synthesis and repository knowledge. Lines indicate shared themes, not citation relationships.</desc>',
+              '        <g class="network-clusters">'])
+for topic in topics:
+    tid = topic['id']
+    text_x = topic['x'] + 18 if tid != 'synthesis' else 568
+    parts.append(f'          <g class="network-cluster" data-topic="{esc(tid)}"><rect x="{topic["x"]}" y="{topic["y"]}" width="{topic["width"]}" height="{topic["height"]}" rx="22"/><circle cx="{text_x}" cy="{topic["y"] + 25}" r="3"/><text x="{text_x + 11}" y="{topic["y"] + 30}" data-tree-en="{esc(topic["en"])}" data-tree-zh="{esc(topic["zh"])}">{html.escape(topic["en"])}</text></g>')
+parts.append('        </g><g class="network-edges" aria-hidden="true">')
+for edge in edges:
+    a, b = by_id[edge['source']], by_id[edge['target']]
+    parts.append(f'          <line class="network-edge" data-source="{esc(a["id"])}" data-target="{esc(b["id"])}" x1="{a["x"]}" y1="{a["y"]}" x2="{b["x"]}" y2="{b["y"]}"/>')
+parts.append('        </g><g class="network-nodes">')
+for node in nodes:
+    paper = papers[node['title']]
+    x, y, width = node['x'], node['y'], node['width']
+    height = node.get('height', 58)
+    shared = ' network-node-shared' if len(node['topics']) > 1 else ''
+    parts.append(f'          <a class="network-node{shared}" data-node-id="{esc(node["id"])}" data-topics="{esc(" ".join(node["topics"]))}" href="{esc(paper["paper"])}" target="_blank" rel="noopener noreferrer" lang="en" aria-label="{esc(paper["title"])}"><title>{html.escape(paper["title"])}</title><rect x="{x-width/2:g}" y="{y-height/2:g}" width="{width}" height="{height}" rx="10"/>')
+    for index, tid in enumerate(node['topics']):
+        parts.append(f'            <circle class="network-membership" data-topic="{esc(tid)}" cx="{x-width/2+12 + index*9:g}" cy="{y-16}" r="3"/>')
+    parts.append(f'            <text class="network-node-name" x="{x}" y="{y+2}" text-anchor="middle">{html.escape(node["short"])}</text><text class="network-node-venue" x="{x}" y="{y+18}" text-anchor="middle">{html.escape(venues.get(paper["venue"], paper["venue"]))}</text></a>')
+parts.extend(['        </g>',
+              '        ' + bilingual('text', 'network-bridge-note', 'Experience × data synthesis', '经验学习 × 数据合成', ' x="447" y="280" text-anchor="middle"'),
+              '      </svg></div>',
+              '      <div class="network-caption"><p class="network-selection" role="status" aria-live="polite" data-tree-en="Hover or focus a paper to highlight its connections. Select a topic to explore a cluster." data-tree-zh="悬停或聚焦论文以高亮关联，点击主题可查看对应簇。">Hover or focus a paper to highlight its connections. Select a topic to explore a cluster.</p>',
+              '        ' + bilingual('span', 'network-scroll-hint', 'Swipe to explore · lines = shared themes', '左右滑动查看 · 连线表示相关研究主题'),
+              '      </div>',
+              '      <details class="network-topic-index"><summary data-tree-en="Browse papers by topic" data-tree-zh="按主题浏览论文">Browse papers by topic</summary><div class="network-topic-list">'])
+for topic in topics:
+    parts.append('        <div>' + bilingual('h3', '', topic['en'], topic['zh']) + '<ul>')
+    for node in nodes:
+        if topic['id'] in node['topics']:
+            paper = papers[node['title']]
+            parts.append(f'          <li><a href="{esc(paper["paper"])}" target="_blank" rel="noopener noreferrer" lang="en">{html.escape(node["short"])}</a></li>')
+    parts.append('        </ul></div>')
+parts.extend(['      </div></details>', '    </section>', '    <!-- research-map:end -->'])
 result, count = re.subn(r'    <!-- research-map:start -->.*?    <!-- research-map:end -->', lambda _: '\n'.join(parts), page, flags=re.S)
-assert count == 1, 'Expected exactly one research-map placeholder'
+assert count == 1, 'Expected one research-map placeholder'
 (ROOT / 'index.html').write_text(result)
-print(f'Rendered {len(questions)} research questions and {len(seen)} paper nodes.')
+print(f'Rendered {len(nodes)} paper nodes, {len(topics)} topic clusters, and {len(edges)} connections.')
