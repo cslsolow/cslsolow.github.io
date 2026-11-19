@@ -119,3 +119,5 @@ research-network.js 提供主题筛选、邻居高亮、键盘聚焦高亮和 Fi
 检查：python3 scripts/check-research-map.py；node --test scripts/check-language-init.cjs。另在浏览器核对主题筛选、SkillForge 的多归属、语言切换、键盘高亮、手机缩放与滑动，以及 Publications 内容保持不变。
 
 关联图节点于 2026-11-17 添加 Silin Chen 的 First author / Co-first author 角标，并在图下提供身份图例；身份读取 content.json，而不以主题颜色区分。作者顺序第一时优先标 First author，即使共同贡献；仅非首位的共同一作标 Co-first author。SkillForge、Repo0、SchrödingerRepo 的共同贡献记录按已核对的 PDF 首页补齐，正文作者星号同步；第一／共同第一作者筛选仍包含 8 篇。
+
+2026-11-19：关联图补充 Second author 角标、主题索引身份和聚焦说明。优先规则为署名第一→First author，非首位共同一作→Co-first author，其余署名第二→Second author。当前 Know Before Fix 为 Second author；SeeRepo、Continuous Learners 继续为 Co-first author。

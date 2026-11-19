@@ -34,6 +34,8 @@ def author_role(paper):
         return 'first'
     if paper.get('cofirst') or 'Silin Chen' in paper.get('equal_contributors', []):
         return 'cofirst'
+    if [name.strip() for name in paper['authors'].split(',')].index('Silin Chen') == 1:
+        return 'second'
     return ''
 
 
@@ -78,7 +80,7 @@ for node in nodes:
     shared = ' network-node-shared' if len(node['topics']) > 1 else ''
     role = author_role(paper)
     cofirst = role == 'cofirst'
-    role_label = {'first': 'First author', 'cofirst': 'Co-first author'}.get(role, '')
+    role_label = {'first': 'First author', 'cofirst': 'Co-first author', 'second': 'Second author'}.get(role, '')
     if role:
         height = max(height, 58)
     lead = ' network-node-lead' if role else ''
@@ -87,14 +89,14 @@ for node in nodes:
     for index, tid in enumerate(node['topics']):
         parts.append(f'            <circle class="network-membership" data-topic="{esc(tid)}" cx="{x-width/2+12 + index*9:g}" cy="{y-16}" r="3"/>')
     if role:
-        badge_width = 76 if cofirst else 60
+        badge_width = 60 if role == 'first' else 76
         badge_right = x + width / 2 - 7
         parts.append(f'            <g class="network-authorship" aria-hidden="true"><rect x="{badge_right-badge_width:g}" y="{y-height/2+5:g}" width="{badge_width}" height="14" rx="4"/><text x="{badge_right-badge_width/2:g}" y="{y-height/2+15:g}" text-anchor="middle">{role_label}</text></g>')
     parts.append(f'            <text class="network-node-name" x="{x}" y="{y+2}" text-anchor="middle">{html.escape(node["short"])}</text><text class="network-node-venue" x="{x}" y="{y+18}" text-anchor="middle">{html.escape(venues.get(paper["venue"], paper["venue"]))}</text></a>')
 parts.extend(['        </g>',
               '        ' + bilingual('text', 'network-bridge-note', 'Experience × data synthesis', '经验学习 × 数据合成', ' x="447" y="280" text-anchor="middle"'),
               '      </svg></div>',
-              '      <p class="network-authorship-legend" lang="en"><span>Silin Chen:</span><span class="network-role-key">First author</span><span class="network-role-key">Co-first author</span></p>',
+              '      <p class="network-authorship-legend" lang="en"><span>Silin Chen:</span><span class="network-role-key">First author</span><span class="network-role-key">Co-first author</span><span class="network-role-key">Second author</span></p>',
               '      <div class="network-caption"><p class="network-selection" role="status" aria-live="polite" data-tree-en="Hover or focus a paper to highlight its connections. Select a topic to explore a cluster." data-tree-zh="悬停或聚焦论文以高亮关联，点击主题可查看对应簇。">Hover or focus a paper to highlight its connections. Select a topic to explore a cluster.</p>',
               '        ' + bilingual('span', 'network-scroll-hint', 'Swipe to explore · lines = shared themes', '左右滑动查看 · 连线表示相关研究主题'),
               '      </div>',
@@ -104,7 +106,7 @@ for topic in topics:
     for node in nodes:
         if topic['id'] in node['topics']:
             paper = papers[node['title']]
-            role_label = {'first': 'First author', 'cofirst': 'Co-first author'}.get(author_role(paper), '')
+            role_label = {'first': 'First author', 'cofirst': 'Co-first author', 'second': 'Second author'}.get(author_role(paper), '')
             role_text = f' <span class="network-index-role" lang="en">{role_label}</span>' if role_label else ''
             parts.append(f'          <li><a href="{esc(paper["paper"])}" target="_blank" rel="noopener noreferrer" lang="en">{html.escape(node["short"])}</a>{role_text}</li>')
     parts.append('        </ul></div>')

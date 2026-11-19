@@ -73,12 +73,14 @@ class ResearchMapTests(unittest.TestCase):
         for node in graph['nodes']:
             paper = papers[node['title']]
             role = 'first' if paper['authors'].split(',')[0].strip() == 'Silin Chen' else ('cofirst' if paper.get('cofirst') or 'Silin Chen' in paper.get('equal_contributors', []) else '')
+            if not role and [name.strip() for name in paper['authors'].split(',')].index('Silin Chen') == 1:
+                role = 'second'
             match = re.search(r'<a class="network-node[^>]*data-node-id="' + node['id'] + r'".*?</a>', rendered, re.S)
             self.assertIsNotNone(match)
             self.assertIn('data-author-role="' + role + '"', match.group())
             self.assertEqual(match.group().count('class="network-authorship"'), int(bool(role)))
             if role:
-                self.assertIn('Co-first author' if role == 'cofirst' else 'First author', match.group())
+                self.assertIn({'first': 'First author', 'cofirst': 'Co-first author', 'second': 'Second author'}[role], match.group())
 
     def test_missing_paper_does_not_overwrite_page(self):
         graph = json.loads((self.root / 'research-map.json').read_text())

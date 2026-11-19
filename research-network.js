@@ -45,7 +45,7 @@
     if (hovered) {
       const node = byId.get(hovered);
       const labels = memberships(node).map(id => clusters.find(cluster => cluster.dataset.topic === id).querySelector('text').textContent);
-      const role = { first: 'First author', cofirst: 'Co-first author' }[node.dataset.authorRole];
+      const role = { first: 'First author', cofirst: 'Co-first author', second: 'Second author' }[node.dataset.authorRole];
       caption.textContent = node.querySelector('.network-node-name').textContent + (role ? ' (' + role + ')' : '') + ' · ' + labels.join(' / ');
     } else if (topic !== 'all') {
       const label = clusters.find(cluster => cluster.dataset.topic === topic).querySelector('text').textContent;
